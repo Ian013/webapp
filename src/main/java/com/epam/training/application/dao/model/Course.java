@@ -9,6 +9,16 @@ public class Course {
     private Date startDate;
     private Date endDate;
 
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    private Teacher teacher;
+
     public Date getStartDate() {
         return startDate;
     }

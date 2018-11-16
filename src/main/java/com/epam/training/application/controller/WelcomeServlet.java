@@ -19,7 +19,6 @@ public class WelcomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         StudentDaoImpl s = new StudentDaoImpl();
-
         request.setAttribute("list",s.getStudents());
         request.getRequestDispatcher("/WEB-INF/view/welcome.jsp").forward(request, response);
 
