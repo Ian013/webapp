@@ -36,7 +36,7 @@ public class JdbcTemplateStudentDao implements StudentDao {
             return ps;
         }, holder);
 
-        return Integer.valueOf(holder.getKeys().get("id").toString());
+        return holder.getKey().intValue();
 
     }
 
@@ -49,6 +49,7 @@ public class JdbcTemplateStudentDao implements StudentDao {
 
     @Override
     public List<Student> getStudents() {
-       return jdbcTemplate.query("SELECT * FROM student;",new StudentRowMapper());
+       return jdbcTemplate.query("SELECT * FROM student",new StudentRowMapper());
     }
 }
+/**/

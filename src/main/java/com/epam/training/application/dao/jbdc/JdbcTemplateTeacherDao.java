@@ -6,11 +6,16 @@ import com.epam.training.application.dao.model.Teacher;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
 
+
+@Transactional
+@Repository
 public class JdbcTemplateTeacherDao implements TeacherDao {
 
     private JdbcTemplate jdbcTemplate;

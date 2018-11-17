@@ -3,9 +3,13 @@ package com.epam.training.application.dao.jbdc;
 import com.epam.training.application.dao.ArchiveDao;
 import com.epam.training.application.dao.model.Archive;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional
+@Repository
 public class JdbcTemplateArchiveDao implements ArchiveDao {
 
     private JdbcTemplate jdbcTemplate;

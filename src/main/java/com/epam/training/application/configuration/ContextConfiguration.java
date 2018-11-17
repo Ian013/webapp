@@ -17,11 +17,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class ContextConfiguration {
 
 	@Bean
-	@ConditionalOnProperty(prefix = "my.db", name = "name", havingValue = "pg")
+	@ConditionalOnProperty(prefix = "my.db", name = "name", havingValue = "pg",matchIfMissing = false)
 	public DataSource ds() {
 		DriverManagerDataSource driver = new DriverManagerDataSource();
-		driver.setDriverClassName("org.postgresql.Driver");
-		driver.setUrl("jdbc:mysql://localhost:3306/faculty");
+		//driver.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		driver.setUrl("jdbc:mysql://localhost:3306/faculty?serverTimezone=UTC");
 		driver.setUsername("admin");
 		driver.setPassword("001201313");
 		return driver;
@@ -30,17 +30,19 @@ public class ContextConfiguration {
 
 	@Bean
 	public JdbcTemplate jdbcTemplate(DataSource ds) {
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(ds);
-		return jdbcTemplate;
+		return new JdbcTemplate(ds);
 	}
 
 	@Bean
 	public String thisWorks(StudentDao studentDao) {
-		Integer insertUser = studentDao.addStudent(new Student("Max", "Naumovich"));
-		System.out.println("Our saved user: " + userDao.getUser(insertUser));
+		try {
+			Integer insertUser = studentDao.addStudent(new Student("Sample", "Text"));
+			System.out.println("Our saved student: " + studentDao.getStudent(insertUser));
 
-		userDao.getUsers("Max").forEach(u -> System.out.println("User :" + u.toString()));
-
+			studentDao.getStudents().forEach(u -> System.out.println("Student :" + u.toString()));
+		}catch(NullPointerException e){
+		    e.printStackTrace();
+		}
 		return "Or not?";
 	}
 
