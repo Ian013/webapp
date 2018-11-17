@@ -12,7 +12,7 @@ public interface TeacherDao {
 
     List<Teacher> getTeachers();
 
-    Integer updateTeacher(long id, Teacher teacher);
+    Integer updateTeacher(int id, Teacher teacher);
 
 
 }

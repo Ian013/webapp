@@ -9,16 +9,26 @@ public class Course {
     private Date startDate;
     private Date endDate;
 
-    public Teacher getTeacher() {
-        return teacher;
+    private int teacherId;
+
+
+    public Course(int id, String name, Date startDate, Date endDate, int teacherId) {
+        this.id = id;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.teacherId = teacherId;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+
+
+    public int getTeacherId() {
+        return teacherId;
     }
 
-    private Teacher teacher;
-
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
+    }
     public Date getStartDate() {
         return startDate;
     }
