@@ -18,7 +18,9 @@ public class CourseRowMapper implements RowMapper<Course> {
         int teacherId = resultSet.getInt("teacher_id");
         Date startDate = (Date) resultSet.getObject("startDate");
         Date endDate = (Date)resultSet.getObject("endDate");
+        String teacherFirstName = resultSet.getString("firstName");
+       String teacherLastName = resultSet.getString("lastName");
 
-        return new Course(id,name,startDate,endDate,teacherId);
+        return new Course(id,name,startDate,endDate,teacherId,teacherLastName,teacherFirstName);
     }
 }

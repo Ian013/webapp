@@ -8,4 +8,5 @@ public interface CourseDao {
     Integer addCourse(Course course);
     Course getCourse(int id);
     List<Course> getCourses();
+    List<Course> getCoursesByStudentId(int studentId);
 }

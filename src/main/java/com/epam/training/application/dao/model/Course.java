@@ -10,6 +10,8 @@ public class Course {
     private Date endDate;
 
     private int teacherId;
+    private String teacherLastName;
+    private String teacherFirstName;
 
 
     public Course(int id, String name, Date startDate, Date endDate, int teacherId) {
@@ -20,7 +22,32 @@ public class Course {
         this.teacherId = teacherId;
     }
 
+    public Course(int id, String name, Date startDate, Date endDate, int teacherId, String teacherLastName,String teacherFirstName) {
+        this.id = id;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.teacherId = teacherId;
+        this.teacherFirstName=teacherFirstName;
+        this.teacherLastName = teacherLastName;
+    }
 
+
+    public String getTeacherLastName() {
+        return teacherLastName;
+    }
+
+    public void setTeacherLastName(String teacherLastName) {
+        this.teacherLastName = teacherLastName;
+    }
+
+    public String getTeacherFirstName() {
+        return teacherFirstName;
+    }
+
+    public void setTeacherFirstName(String teacherFirstName) {
+        this.teacherFirstName = teacherFirstName;
+    }
 
     public int getTeacherId() {
         return teacherId;
@@ -59,5 +86,16 @@ public class Course {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", teacher - " +teacherFirstName+" "+ teacherLastName+
+                '}';
     }
 }

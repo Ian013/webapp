@@ -15,7 +15,6 @@ public class ArchiveRowMapper  implements RowMapper<Archive> {
         int note =resultSet.getInt("note");
         int studentId = resultSet.getInt("student_id");
         int courseId = resultSet.getInt("course_id");
-        int teacherId = resultSet.getInt("course_teacher_id");
         return new Archive(id,note,studentId,courseId);
     }
 }

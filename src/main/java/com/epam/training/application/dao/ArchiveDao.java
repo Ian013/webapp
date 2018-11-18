@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface ArchiveDao {
 
-    Integer addArchive();
+    Integer addArchive(Archive archive);
 
-    Archive gerArchive(int id);
+    Archive getArchive(int id);
+
+    Archive getArchiveNoteForStudent(int studentId);
 
     List<Archive> getArchives();
 }

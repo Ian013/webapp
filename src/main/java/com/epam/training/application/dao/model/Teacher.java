@@ -6,6 +6,15 @@ public class Teacher {
 
     }
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
     public Teacher(int id, String firstName, String lastName) {
         this.id=id;
         this.firstName = firstName;

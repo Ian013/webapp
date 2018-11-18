@@ -48,8 +48,16 @@ public class JdbcTemplateStudentDao implements StudentDao {
     }
 
     @Override
-    public List<Student> getStudents() {
+    public List<Student> getAllStudents() {
        return jdbcTemplate.query("SELECT * FROM student",new StudentRowMapper());
     }
+
+    @Override
+    public List<Student> getStudentsFromCourse(int courseId) {
+        return jdbcTemplate.query("SELECT student.id,student.firstName,student.lastName " +
+                "FROM student JOIN student_has_course shc on student.id = shc.student_id WHERE shc.course_id=? "
+                ,new StudentRowMapper(),courseId);
+    }
+
 }
 /**/

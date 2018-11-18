@@ -2,7 +2,9 @@ package com.epam.training.application.dao.jbdc;
 
 import com.epam.training.application.dao.CourseDao;
 import com.epam.training.application.dao.jbdc.mapper.CourseRowMapper;
+import com.epam.training.application.dao.jbdc.mapper.StudentRowMapper;
 import com.epam.training.application.dao.model.Course;
+import com.epam.training.application.dao.model.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -23,6 +25,8 @@ public class JdbcTemplateCourseDao implements CourseDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
+
     @Override
     public Integer addCourse(Course course) {
         KeyHolder holder = new GeneratedKeyHolder();
@@ -37,7 +41,7 @@ public class JdbcTemplateCourseDao implements CourseDao {
             return ps;
         }, holder);
 
-        return Integer.valueOf(holder.getKeys().get("course.id").toString());
+        return holder.getKey().intValue();
     }
 
     @Override
@@ -51,8 +55,16 @@ public class JdbcTemplateCourseDao implements CourseDao {
     @Override
     public List<Course> getCourses() {
         return jdbcTemplate.query(
-                "SELECT course.id,course.name,startDate,endDate,teacher.firstName,teacher.lastName" +
-                " FROM course JOIN teacher WHERE teacher_id=teacher.id"
+                "SELECT course.id,course.name,startDate,endDate,course.teacher_id,t.firstName,t.lastName" +
+                        " FROM course JOIN teacher t WHERE course.teacher_id=t.id"
                 ,new CourseRowMapper());
+    }
+
+    @Override
+    public List<Course> getCoursesByStudentId(int studentId){
+        return jdbcTemplate.query(
+                "SELECT course.id, course.name, course.teacher_id,startDate,endDate,t.firstName,t.lastName" +
+                        " FROM course JOIN student_has_course shc on course.id = shc.course_id  join teacher t " +
+                "JOIN student s on shc.student_id = s.id WHERE s.id =? and course.teacher_id=t.id",new CourseRowMapper(),studentId);
     }
 }

@@ -9,5 +9,7 @@ public interface StudentDao {
 
     Student getStudent(Integer id);
 
-    List<Student> getStudents();
+    List<Student> getAllStudents();
+
+    List<Student> getStudentsFromCourse(int courseId);
 }

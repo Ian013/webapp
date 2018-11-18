@@ -37,7 +37,7 @@ public class JdbcTemplateTeacherDao implements TeacherDao {
             return ps;
         }, holder);
 
-        return Integer.valueOf(holder.getKeys().get("teacher.id").toString());
+        return holder.getKey().intValue();
     }
 
     @Override
