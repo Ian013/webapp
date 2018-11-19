@@ -7,10 +7,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-//@Service
+@Service
 public class CourseServiceImpl implements CourseService{
-    //@Autowired
-    private JdbcTemplateCourseDao courseDao;
+
+    private final JdbcTemplateCourseDao courseDao;
+
+    @Autowired
+    public CourseServiceImpl(JdbcTemplateCourseDao courseDao) {
+        this.courseDao = courseDao;
+    }
 
     @Override
     public Course getCourse(int id) {

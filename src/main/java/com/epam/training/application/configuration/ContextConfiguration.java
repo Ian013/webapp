@@ -6,6 +6,7 @@ import com.epam.training.application.dao.CourseDao;
 import com.epam.training.application.dao.StudentDao;
 import com.epam.training.application.dao.TeacherDao;
 import com.epam.training.application.dao.model.Student;
+import com.epam.training.application.service.CourseService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,6 @@ public class ContextConfiguration {
 		driver.setUsername("admin");
 		driver.setPassword("001201313");
 		return driver;
-
 	}
 
 	@Bean
@@ -44,9 +44,9 @@ public class ContextConfiguration {
 		return "Or not?";
 	}
 	@Bean
-	public String thisWorksToo(CourseDao courseDao){
+	public String thisWorksToo(CourseService service){
 		try {
-			courseDao.getCoursesByStudentId(1).forEach(c -> System.out.println("Course :" + c.toString()));
+			service.getCoursesForStudent(1).forEach(c -> System.out.println("Course :" + c.toString()));
 		}catch(NullPointerException e){
 			e.printStackTrace();
 		}

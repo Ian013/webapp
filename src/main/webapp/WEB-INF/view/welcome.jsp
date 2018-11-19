@@ -17,8 +17,7 @@
     document.writeln("Hello, Javascript! 2");
 </script>
     Controller:
-    <p>"'Hello, ' + ${name} + '!'"<p/>
-
-
+    <p>Hello, <p/>
+<p> <a href="courses">courses</a></p>
 </body>
 </html>
