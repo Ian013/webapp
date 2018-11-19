@@ -2,7 +2,7 @@ package com.epam.training.application.dao.jbdc;
 
 import com.epam.training.application.dao.ArchiveDao;
 import com.epam.training.application.dao.jbdc.mapper.ArchiveRowMapper;
-import com.epam.training.application.dao.model.Archive;
+import com.epam.training.application.domain.Archive;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -15,18 +15,18 @@ import java.util.List;
 
 @Transactional
 @Repository
-public class JdbcTemplateArchiveDao implements ArchiveDao {
+public class ArchiveDaoImpl implements ArchiveDao {
 
     private JdbcTemplate jdbcTemplate;
 
-    public JdbcTemplateArchiveDao(JdbcTemplate jdbcTemplate) {
+    public ArchiveDaoImpl(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }
 
 
     @Override
-    public Integer addArchive(Archive archive) {
+    public Integer saveOrUpdate(Archive archive) {
         KeyHolder holder = new GeneratedKeyHolder();
 
         String sql = "INSERT INTO archive(note, student_id, course_id) values (?, ?,?)";
@@ -42,14 +42,18 @@ public class JdbcTemplateArchiveDao implements ArchiveDao {
     }
 
     @Override
-    public Archive getArchive(int id) {
+    public Integer remove(int id) {
+        return null;
+    }
+
+    @Override
+    public Archive getById(int id) {
         return jdbcTemplate.queryForObject(
                 "SELECT archive.id,archive.note,c2.name,s.firstName,s.lastName,t.lastName FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
                         "JOIN student s on archive.student_id = s.id " +
                         "JOIN teacher t on c2.teacher_id = t.id WHERE archive.id =?",new ArchiveRowMapper(),id);
     }
-
     @Override
     public Archive getArchiveNoteForStudent(int studentId) {
         return jdbcTemplate.queryForObject(
@@ -60,7 +64,12 @@ public class JdbcTemplateArchiveDao implements ArchiveDao {
     }
 
     @Override
-    public List<Archive> getArchives() {
+    public Integer remove(Archive archive) {
+        return null;
+    }
+
+    @Override
+    public List<Archive> getAll() {
         return jdbcTemplate.query(
                 "SELECT * FROM archive ",new ArchiveRowMapper());
     }

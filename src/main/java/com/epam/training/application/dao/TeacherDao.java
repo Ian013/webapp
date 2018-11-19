@@ -1,10 +1,10 @@
 package com.epam.training.application.dao;
 
-import com.epam.training.application.dao.model.Teacher;
+import com.epam.training.application.domain.Teacher;
 
 import java.util.List;
 
-public interface TeacherDao {
+public interface TeacherDao  extends BasicDao<Teacher>{
 
     Integer addTeacher(Teacher teacher);
 

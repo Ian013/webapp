@@ -1,16 +1,12 @@
 package com.epam.training.application.dao;
 
-import com.epam.training.application.dao.model.Archive;
+import com.epam.training.application.domain.Archive;
 
 import java.util.List;
 
-public interface ArchiveDao {
-
-    Integer addArchive(Archive archive);
-
-    Archive getArchive(int id);
+public interface ArchiveDao extends BasicDao<Archive> {
 
     Archive getArchiveNoteForStudent(int studentId);
 
-    List<Archive> getArchives();
+    Integer remove(Archive archive);
 }

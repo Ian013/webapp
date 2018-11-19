@@ -1,12 +1,10 @@
 package com.epam.training.application.dao;
 
-import com.epam.training.application.dao.model.Course;
+import com.epam.training.application.domain.Course;
 
 import java.util.List;
 
-public interface CourseDao {
-    Integer addCourse(Course course);
-    Course getCourse(int id);
-    List<Course> getCourses();
+public interface CourseDao extends BasicDao<Course> {
+
     List<Course> getCoursesByStudentId(int studentId);
 }

@@ -2,7 +2,7 @@ package com.epam.training.application.dao.jbdc;
 
 import com.epam.training.application.dao.TeacherDao;
 import com.epam.training.application.dao.jbdc.mapper.TeacherRowMapper;
-import com.epam.training.application.dao.model.Teacher;
+import com.epam.training.application.domain.Teacher;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -16,11 +16,11 @@ import java.util.List;
 
 @Transactional
 @Repository
-public class JdbcTemplateTeacherDao implements TeacherDao {
+public class TeacherDaoImpl implements TeacherDao {
 
     private JdbcTemplate jdbcTemplate;
 
-    public JdbcTemplateTeacherDao(JdbcTemplate jdbcTemplate) {
+    public TeacherDaoImpl(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }
@@ -56,6 +56,26 @@ public class JdbcTemplateTeacherDao implements TeacherDao {
     @Override
     public Integer updateTeacher(int id, Teacher teacher) {
         //TODO
+        return null;
+    }
+
+    @Override
+    public Teacher getById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Teacher> getAll() {
+        return null;
+    }
+
+    @Override
+    public Integer saveOrUpdate(Teacher teacher) {
+        return null;
+    }
+
+    @Override
+    public Integer remove(int id) {
         return null;
     }
 }

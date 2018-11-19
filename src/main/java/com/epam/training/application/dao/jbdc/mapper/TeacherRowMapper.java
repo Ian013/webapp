@@ -1,6 +1,6 @@
 package com.epam.training.application.dao.jbdc.mapper;
 
-import com.epam.training.application.dao.model.Teacher;
+import com.epam.training.application.domain.Teacher;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

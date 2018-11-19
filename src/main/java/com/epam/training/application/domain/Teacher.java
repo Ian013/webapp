@@ -1,4 +1,4 @@
-package com.epam.training.application.dao.model;
+package com.epam.training.application.domain;
 
 public class Teacher {
 

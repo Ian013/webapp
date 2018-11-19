@@ -36,10 +36,12 @@
                 <td>${course.startDate}</td>
                 <td>${course.endDate}</td>
                 <td>${course.teacherLastName}</td>
-                <td></td>
+                <td><a href="/delete/${course.id}">Delete</a></td>
+                </tr>
             </tr>
         </c:forEach>
     </table>
 </table>
+<p><a href="add-course">Add course</a> </p>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.epam.training.application.dao.model;
+package com.epam.training.application.domain;
 
 import java.sql.Date;
 
@@ -12,7 +12,8 @@ public class Course {
     private int teacherId;
     private String teacherLastName;
     private String teacherFirstName;
-
+// private Teacher teacher
+    //private ArrayList<Student> students;
 
     public Course(int id, String name, Date startDate, Date endDate, int teacherId) {
         this.id = id;
@@ -21,6 +22,13 @@ public class Course {
         this.endDate = endDate;
         this.teacherId = teacherId;
     }
+    public Course(String name, Date startDate, Date endDate, int teacherId) {
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.teacherId = teacherId;
+    }
+
 
     public Course(int id, String name, Date startDate, Date endDate, int teacherId, String teacherLastName,String teacherFirstName) {
         this.id = id;

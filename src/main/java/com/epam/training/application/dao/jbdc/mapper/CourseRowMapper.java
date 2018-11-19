@@ -1,6 +1,6 @@
 package com.epam.training.application.dao.jbdc.mapper;
 
-import com.epam.training.application.dao.model.Course;
+import com.epam.training.application.domain.Course;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.Date;
