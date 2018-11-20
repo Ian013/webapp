@@ -19,5 +19,6 @@
     Controller:
     <p>Hello, <p/>
 <p> <a href="courses">courses</a></p>
+<p> <a href="students">students</a> </p>
 </body>
 </html>

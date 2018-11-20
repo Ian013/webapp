@@ -1,5 +1,7 @@
 package com.epam.training.application.domain;
 
+import java.util.List;
+
 public class Student {
 
     private int id;
@@ -7,6 +9,16 @@ public class Student {
     private String firstName;
 
     private String lastName;
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    private List<Course> courses;
 
     public Student() {
     }

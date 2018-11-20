@@ -25,19 +25,15 @@
 <table>
     <table>
         <tr>
-            <th>Title</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Teacher</th>
+            <th>Name</th>
+            <th>Courses</th>
         </tr>
-        <c:forEach var="course" items="${courses}">
+        <c:forEach var="student" items="${students}">
             <tr>
-                <td>${course.name}</td>
-                <td>${course.startDate}</td>
-                <td>${course.endDate}</td>
-                <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
-                <td><a href="/delete/${course.id}">Delete</a></td>
-                </tr>
+                <td>${student.firstName} ${student.lastName}</td>
+                <td>${student.courses}</td>
+                <td><a href="/delete/${student.id}">Delete</a></td>
+            </tr>
             </tr>
         </c:forEach>
     </table>

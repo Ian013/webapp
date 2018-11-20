@@ -1,6 +1,7 @@
 package com.epam.training.application.domain;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Course {
 
@@ -8,62 +9,43 @@ public class Course {
     private String name;
     private Date startDate;
     private Date endDate;
+    private Teacher teacher;
+    private ArrayList<Student> students;
 
-    private int teacherId;
-    private String teacherLastName;
-    private String teacherFirstName;
-// private Teacher teacher
-    //private ArrayList<Student> students;
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 
-    public Course(int id, String name, Date startDate, Date endDate, int teacherId) {
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+
+    public Course(String name, Date startDate, Date endDate, Teacher teacher) {
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.teacher = teacher;
+    }
+    public Course(int id, String name, Date startDate, Date endDate,Teacher teacher) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.teacherId = teacherId;
+        this.teacher = teacher;
     }
-    public Course(String name, Date startDate, Date endDate, int teacherId) {
-        this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.teacherId = teacherId;
-    }
+    public Course(){}
 
 
-    public Course(int id, String name, Date startDate, Date endDate, int teacherId, String teacherLastName,String teacherFirstName) {
-        this.id = id;
-        this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.teacherId = teacherId;
-        this.teacherFirstName=teacherFirstName;
-        this.teacherLastName = teacherLastName;
-    }
 
-
-    public String getTeacherLastName() {
-        return teacherLastName;
-    }
-
-    public void setTeacherLastName(String teacherLastName) {
-        this.teacherLastName = teacherLastName;
-    }
-
-    public String getTeacherFirstName() {
-        return teacherFirstName;
-    }
-
-    public void setTeacherFirstName(String teacherFirstName) {
-        this.teacherFirstName = teacherFirstName;
-    }
-
-    public int getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(int teacherId) {
-        this.teacherId = teacherId;
-    }
     public Date getStartDate() {
         return startDate;
     }
@@ -96,14 +78,13 @@ public class Course {
         this.id = id;
     }
 
+
     @Override
     public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "Course {"+
+                " name='" + name + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", teacher - " +teacherFirstName+" "+ teacherLastName+
                 '}';
     }
 }

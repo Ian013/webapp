@@ -25,7 +25,7 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public Integer addStudent(Student student) {
+    public Integer saveOrUpdate(Student student) {
         KeyHolder holder = new GeneratedKeyHolder();
 
         String sql = "INSERT INTO student(firstName, lastName) values (?, ?)";
@@ -41,14 +41,14 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public Student getStudent(Integer id) {
+    public Student getById(int id) {
         return jdbcTemplate.queryForObject(
                 "SELECT * FROM student WHERE student.id = ?"
                 ,new StudentRowMapper(),id);
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public List<Student> getAll() {
        return jdbcTemplate.query("SELECT * FROM student",new StudentRowMapper());
     }
 
@@ -59,20 +59,6 @@ public class StudentDaoImpl implements StudentDao {
                 ,new StudentRowMapper(),courseId);
     }
 
-    @Override
-    public Student getById(int id) {
-        return null;
-    }
-
-    @Override
-    public List<Student> getAll() {
-        return null;
-    }
-
-    @Override
-    public Integer saveOrUpdate(Student student) {
-        return null;
-    }
 
     @Override
     public Integer remove(int id) {

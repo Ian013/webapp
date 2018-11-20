@@ -26,7 +26,7 @@ public class TeacherDaoImpl implements TeacherDao {
     }
 
     @Override
-    public Integer addTeacher(Teacher teacher) {
+    public Integer saveOrUpdate(Teacher teacher) {
         KeyHolder holder = new GeneratedKeyHolder();
 
         String sql = "INSERT INTO teacher(firstName, lastName) values (?, ?)";
@@ -41,41 +41,26 @@ public class TeacherDaoImpl implements TeacherDao {
     }
 
     @Override
-    public Teacher getTeacher(long id) {
+    public Teacher getById(int id) {
         return jdbcTemplate.queryForObject(
                 "SELECT * FROM teacher WHERE teacher.id =?",
                 new TeacherRowMapper(),id);
     }
 
     @Override
-    public List<Teacher> getTeachers() {
+    public List<Teacher> getAll() {
         return jdbcTemplate.query("SELECT * FROM teacher",
                 new TeacherRowMapper());
     }
 
     @Override
-    public Integer updateTeacher(int id, Teacher teacher) {
-        //TODO
-        return null;
-    }
-
-    @Override
-    public Teacher getById(int id) {
-        return null;
-    }
-
-    @Override
-    public List<Teacher> getAll() {
-        return null;
-    }
-
-    @Override
-    public Integer saveOrUpdate(Teacher teacher) {
-        return null;
-    }
-
-    @Override
     public Integer remove(int id) {
         return null;
+    }
+
+    @Override
+    public List<Teacher> getByLastName(String lastName) {
+        return jdbcTemplate.query("SELECT * FROM teacher WHERE teacher.lastName = ?",
+                new TeacherRowMapper(),lastName);
     }
 }

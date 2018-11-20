@@ -7,4 +7,5 @@ import java.util.List;
 public interface CourseService extends BasicService<Course> {
 
     List<Course> getCoursesForStudent(int studentId);
+
 }

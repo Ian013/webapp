@@ -30,7 +30,7 @@ public class CourseDaoImpl implements CourseDao {
         jdbcTemplate.update((connection) -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, course.getName());
-            ps.setInt(2, course.getTeacherId());
+            ps.setInt(2, course.getTeacher().getId());
             ps.setObject(3,course.getStartDate());
             ps.setObject(4,course.getEndDate());
             return ps;
@@ -51,8 +51,8 @@ public class CourseDaoImpl implements CourseDao {
     @Override
     public Course getById(int id) {
         return jdbcTemplate.queryForObject(
-                "SELECT course.id,course.name,startDate,endDate,teacher.firstName,teacher.lastName " +
-                        "FROM course JOIN teacher WHERE course.id = ? AND teacher_id=teacher.id"
+                "SELECT course.id,course.name,startDate,endDate,t.id,t.firstName,t.lastName " +
+                        "FROM course JOIN teacher t WHERE course.id = ? AND teacher_id=t.id"
                 ,new CourseRowMapper(),id);
     }
 

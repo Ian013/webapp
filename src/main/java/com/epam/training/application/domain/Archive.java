@@ -6,76 +6,34 @@ public class Archive {
 
     private int id;
     private int note;
-    private int courseId;
-    private int studentId;
+    private Student student;
+    private Course course;
 
-    private String teacherLastName;
-    private String courseTitle;
-    private String studentFirstName;
-
-    public int getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
-
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
-
-
-    public String getStudentLastName() {
-        return studentLastName;
-    }
-
-    public void setStudentLastName(String studentLastName) {
-        this.studentLastName = studentLastName;
-    }
-
-    public String getStudentFirstName() {
-        return studentFirstName;
-    }
-
-    public void setStudentFirstName(String studentFirstName) {
-        this.studentFirstName = studentFirstName;
-    }
-
-    public String getCourseTitle() {
-        return courseTitle;
-    }
-
-    public void setCourseTitle(String courseTitle) {
-        this.courseTitle = courseTitle;
-    }
-
-    private String studentLastName;
-
-    public Archive(int id, int note, String courseTitle,String teacherLastName,String studentFirstName,String studentLastName) {
+    public Archive(int id, int note, Student student,Course course) {
         this.id =id;
-        this.courseTitle =courseTitle;
-        this.teacherLastName = teacherLastName;
-        this.studentFirstName =studentFirstName;
-        this.studentLastName = studentLastName;
+        this.student =student;
+        this.course = course;
         this.note = note;
     }
-    public Archive(int id, int note, int studentId,int courseId) {
-        this.id =id;
-        this.studentId =studentId;
-        this.courseId = courseId;
-        this.note = note;
+
+    public Course getCourse() {
+        return course;
+    }
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
 
     public int getNote() {
         return note;
     }
-
     public void setNote(int note) {
         this.note = note;
     }
@@ -83,28 +41,8 @@ public class Archive {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Archive archive = (Archive) o;
-        return id == archive.id &&
-                note == archive.note &&
-                courseId == archive.courseId &&
-                studentId == archive.studentId &&
-                Objects.equals(teacherLastName, archive.teacherLastName) &&
-                Objects.equals(courseTitle, archive.courseTitle) &&
-                Objects.equals(studentFirstName, archive.studentFirstName) &&
-                Objects.equals(studentLastName, archive.studentLastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, note, courseId, studentId, teacherLastName, courseTitle, studentFirstName, studentLastName);
-    }
 }

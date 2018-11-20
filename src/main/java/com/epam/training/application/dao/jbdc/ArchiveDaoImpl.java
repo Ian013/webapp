@@ -33,8 +33,8 @@ public class ArchiveDaoImpl implements ArchiveDao {
         jdbcTemplate.update((connection) -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, archive.getNote());
-            ps.setInt(2, archive.getStudentId());
-            ps.setObject(3,archive.getCourseId());
+            ps.setInt(2, archive.getStudent().getId());
+            ps.setObject(3,archive.getCourse().getId());
             return ps;
         }, holder);
 
@@ -49,18 +49,22 @@ public class ArchiveDaoImpl implements ArchiveDao {
     @Override
     public Archive getById(int id) {
         return jdbcTemplate.queryForObject(
-                "SELECT archive.id,archive.note,c2.name,s.firstName,s.lastName,t.lastName FROM archive " +
+                "SELECT * FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
                         "JOIN student s on archive.student_id = s.id " +
-                        "JOIN teacher t on c2.teacher_id = t.id WHERE archive.id =?",new ArchiveRowMapper(),id);
+                        "JOIN teacher on c2.teacher_id = teacher.id" +
+                        " WHERE archive.id =?",
+                new ArchiveRowMapper(),id);
     }
     @Override
     public Archive getArchiveNoteForStudent(int studentId) {
         return jdbcTemplate.queryForObject(
-                "SELECT s.id,archive.note,c2.name,s.firstName,s.lastName,t.lastName FROM archive " +
+                    "SELECT * FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
                         "JOIN student s on archive.student_id = s.id " +
-                        "JOIN teacher t on c2.teacher_id = t.id WHERE s.id =?",new ArchiveRowMapper(),studentId);
+                        "JOIN teacher t on c2.teacher_id = t.id" +
+                        "WHERE s.id =?",
+                new ArchiveRowMapper(),studentId);
     }
 
     @Override
@@ -71,9 +75,10 @@ public class ArchiveDaoImpl implements ArchiveDao {
     @Override
     public List<Archive> getAll() {
         return jdbcTemplate.query(
-                "SELECT * FROM archive ",new ArchiveRowMapper());
-    }
-}/*"SELECT archive.id,archive.note,c2.name,s.firstName,s.lastName,t.lastName FROM archive " +
+                    "SELECT * FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
                         "JOIN student s on archive.student_id = s.id " +
-                        "JOIN teacher t on c2.teacher_id = t.id"*/
+                        "JOIN teacher t on c2.teacher_id = t.id",
+                new ArchiveRowMapper());
+    }
+}
