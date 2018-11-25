@@ -55,9 +55,12 @@ public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public Integer remove(int id) {
-        return null;
+        KeyHolder holder = new GeneratedKeyHolder();
+        String sql = "DELETE FROM teacher WHERE teacher.id= ?";
+        jdbcTemplate.update(sql,id,holder);
+        return holder.getKey().intValue();
+        //return holder.getKey().intValue();
     }
-
     @Override
     public List<Teacher> getByLastName(String lastName) {
         return jdbcTemplate.query("SELECT * FROM teacher WHERE teacher.lastName = ?",

@@ -62,7 +62,12 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public Integer remove(int id) {
-        return null;
+        KeyHolder holder = new GeneratedKeyHolder();
+        String sql = "DELETE FROM student " +
+                    " WHERE student.id= ? ";
+        jdbcTemplate.update(sql,id,holder);
+        return holder.getKey().intValue();
+        //return holder.getKey().intValue();
     }
 }
 /**/

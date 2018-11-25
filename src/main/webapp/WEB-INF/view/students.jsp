@@ -15,7 +15,6 @@
             text-align: left;
             padding: 8px;
         }
-
         tr:nth-child(even) {
             background-color: #dddddd;
         }
@@ -31,14 +30,12 @@
         <c:forEach var="student" items="${students}">
             <tr>
                 <td>${student.firstName} ${student.lastName}</td>
-                <td>${student.courses}</td>
                 <td><a href="/delete/${student.id}">Delete</a></td>
-            </tr>
             </tr>
         </c:forEach>
     </table>
 </table>
-<p><a href="add-course">Add course</a> </p>
+<!--p><a href="add-student"></a> </p -->
 
 </body>
 </html>

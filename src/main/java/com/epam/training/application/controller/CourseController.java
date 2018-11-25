@@ -1,6 +1,7 @@
 package com.epam.training.application.controller;
 
 import com.epam.training.application.domain.Course;
+import com.epam.training.application.domain.Teacher;
 import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.TeacherService;
 import com.epam.training.application.service.impl.TeacherServiceImpl;
@@ -15,7 +16,7 @@ import java.util.List;
 @Controller
 public class CourseController {
 
-    private CourseService courseService;
+    private final CourseService courseService;
     private final TeacherService teacherService;
 
     @Autowired
@@ -36,7 +37,8 @@ public class CourseController {
         return "courses";
     }
     @RequestMapping(value="/add-course" , method = RequestMethod.GET)
-    public String addCoursePage(){
+    public String addCoursePage(Model model){
+        model.addAttribute("teachers",teacherService.getAll());
         return "add-course";
     }
 
@@ -44,10 +46,9 @@ public class CourseController {
     public String addNewCourse(@RequestParam(value = "title")String title,
                                @RequestParam(value = "startDate")Date start,
                                @RequestParam(value = "endDate")Date endDate,
-                               @RequestParam(value = "teacherLastName")int teacherId){
+                               @RequestParam(value = "teacher") int teacherId){
 
         Course course = new Course(title,start, endDate,teacherService.getById(teacherId));
-
         courseService.saveOrUpdate(course);
         return "redirect:/courses";
     }

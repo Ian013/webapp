@@ -42,11 +42,6 @@ public class ArchiveDaoImpl implements ArchiveDao {
     }
 
     @Override
-    public Integer remove(int id) {
-        return null;
-    }
-
-    @Override
     public Archive getById(int id) {
         return jdbcTemplate.queryForObject(
                 "SELECT * FROM archive " +
@@ -70,6 +65,14 @@ public class ArchiveDaoImpl implements ArchiveDao {
     @Override
     public Integer remove(Archive archive) {
         return null;
+    }
+
+    @Override
+    public Integer remove(int id) {
+        KeyHolder holder = new GeneratedKeyHolder();
+        String sql = "DELETE FROM archive WHERE archive.id= ?";
+        jdbcTemplate.update(sql,id,holder);
+        return holder.getKey().intValue();
     }
 
     @Override

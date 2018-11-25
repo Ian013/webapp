@@ -6,6 +6,7 @@ import com.epam.training.application.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,6 +23,7 @@ public class StudentController {
         this.studentService = studentService;
         this.courseService = courseService;
     }
+
     @RequestMapping(value = "/students",method = RequestMethod.GET)
     public String test(Model model){
         List<Student> students = studentService.getAll();
@@ -30,4 +32,12 @@ public class StudentController {
         return "students";
     }
 
+    @RequestMapping(value="/add-student", method=RequestMethod.GET)
+    public String addStudent( ) {
+        return "add-student";
+    }
+    @RequestMapping(value = "/login-sucess",method = RequestMethod.GET)
+    public String loginStudentSuccess(){
+        return "login-sucess";
+    }
 }

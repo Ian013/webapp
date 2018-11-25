@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
-    <style>
+   <style>
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
@@ -31,7 +31,7 @@
             <th>Teacher</th>
         </tr>
         <c:forEach var="course" items="${courses}">
-            <tr>
+            <tr id ="courseTable">
                 <td>${course.name}</td>
                 <td>${course.startDate}</td>
                 <td>${course.endDate}</td>

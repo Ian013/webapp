@@ -20,5 +20,6 @@
     <p>Hello, <p/>
 <p> <a href="courses">courses</a></p>
 <p> <a href="students">students</a> </p>
+<p> <a href="add-student">register new student</a> </p>
 </body>
 </html>
