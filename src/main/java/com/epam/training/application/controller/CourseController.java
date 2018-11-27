@@ -34,6 +34,7 @@ public class CourseController {
     public String getCourses(Model model){
         List<Course> courses = courseService.getAll();
         model.addAttribute("courses", courses);
+        model.addAttribute("teachers",teacherService.getAll());
         return "courses";
     }
     @RequestMapping(value="/add-course" , method = RequestMethod.GET)
@@ -42,7 +43,7 @@ public class CourseController {
         return "add-course";
     }
 
-    @RequestMapping(value="/add-course", method = RequestMethod.POST)
+    @RequestMapping(value="/courses", method = RequestMethod.POST)
     public String addNewCourse(@RequestParam(value = "title")String title,
                                @RequestParam(value = "startDate")Date start,
                                @RequestParam(value = "endDate")Date endDate,

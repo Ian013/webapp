@@ -36,6 +36,7 @@ public class StudentController {
     public String addStudent( ) {
         return "add-student";
     }
+
     @RequestMapping(value = "/login-sucess",method = RequestMethod.GET)
     public String loginStudentSuccess(){
         return "login-sucess";

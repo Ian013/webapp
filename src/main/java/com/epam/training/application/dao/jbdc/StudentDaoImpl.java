@@ -2,6 +2,7 @@ package com.epam.training.application.dao.jbdc;
 
 import com.epam.training.application.dao.StudentDao;
 import com.epam.training.application.dao.jbdc.mapper.StudentRowMapper;
+import com.epam.training.application.domain.Course;
 import com.epam.training.application.domain.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -37,7 +38,19 @@ public class StudentDaoImpl implements StudentDao {
         }, holder);
 
         return holder.getKey().intValue();
-
+    }
+    @Override
+    public Integer addCourse(int studentId,int courseId) {
+        KeyHolder holder  =new GeneratedKeyHolder();
+        jdbcTemplate.update((con)->{
+            PreparedStatement pr =con.prepareStatement(
+                    "INSERT INTO student_has_course(student_id, course_id) values (?,?)");
+                        pr.setInt(1,studentId);
+                        pr.setInt(2,courseId);
+                        return pr;
+            },holder);
+        String sql ="INSERT INTO";
+        return null;
     }
 
     @Override
@@ -60,12 +73,15 @@ public class StudentDaoImpl implements StudentDao {
     }
 
 
+
+
     @Override
     public Integer remove(int id) {
         KeyHolder holder = new GeneratedKeyHolder();
-        String sql = "DELETE FROM student " +
-                    " WHERE student.id= ? ";
-        jdbcTemplate.update(sql,id,holder);
+        jdbcTemplate.update(
+                "DELETE FROM student_has_course" +
+                        " WHERE student_id = ?;" +
+                        "DELETE from student where id=?",id,id,holder);
         return holder.getKey().intValue();
         //return holder.getKey().intValue();
     }

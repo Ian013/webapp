@@ -13,9 +13,7 @@ public class RootConfig implements WebMvcConfigurer{
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/WEB-INF/view/**")
-                .addResourceLocations("/WEB-INF/view/");
-        registry.addResourceHandler("/WEB-INF/view/resources/**")
-                .addResourceLocations("/WEB-INF/view/resources/");
+                .addResourceLocations("/WEB-INF/view/","/WEB-INF/view/resources/");
 
     }
 }
