@@ -43,7 +43,7 @@ public class CourseDaoImpl implements CourseDao {
     public Integer remove(int id) {
         KeyHolder holder = new GeneratedKeyHolder();
         String sql = "DELETE FROM course WHERE course.id= ?;" +
-                    " DELETE FROM student_has_course where course_id =?";
+                    " DELETE FROM user_has_course where course_id =?";
         jdbcTemplate.update(sql,id,id,holder);
         return holder.getKey().intValue();
     }
@@ -68,8 +68,9 @@ public class CourseDaoImpl implements CourseDao {
     public List<Course> getCoursesByStudentId(int studentId){
         return jdbcTemplate.query(
                 "SELECT course.id, course.name, course.teacher_id,startDate,endDate,t.firstName,t.lastName" +
-                "FROM course JOIN student_has_course shc on course.id = shc.course_id  join teacher t " +
-                "JOIN student s on shc.student_id = s.id WHERE s.id =? and course.teacher_id=t.id",
+                " FROM course JOIN user_has_course shc on course.id = shc.course_id  " +
+                        "join teacher t " +
+                "JOIN user s on shc.user_id=s.id  WHERE s.id =? and course.teacher_id=t.id",
                 new CourseRowMapper(),studentId);
     }
 }

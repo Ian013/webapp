@@ -1,17 +1,15 @@
 package com.epam.training.application.domain;
 
-import java.util.Objects;
-
 public class Archive {
 
     private int id;
     private int note;
-    private Student student;
+    private User user;
     private Course course;
 
-    public Archive(int id, int note, Student student,Course course) {
+    public Archive(int id, int note, User user, Course course) {
         this.id =id;
-        this.student =student;
+        this.user = user;
         this.course = course;
         this.note = note;
     }
@@ -23,11 +21,11 @@ public class Archive {
         this.course = course;
     }
 
-    public Student getStudent() {
-        return student;
+    public User getUser() {
+        return user;
     }
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setUser(User user) {
+        this.user = user;
     }
 
 

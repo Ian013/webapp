@@ -45,7 +45,7 @@
 </table>
 <p><a href="add-course">Add course</a></p>
 
-<!-- -->
+<c:if test="${pageContext.request.isUserInRole('admin')}">
 <form action="${pageContext.request.contextPath}/courses" method="POST">
     <label>Title</label>
     <label>
@@ -70,6 +70,6 @@
         <input type="submit" value="submit">
 
 </form>
-
+</c:if>
 </body>
 </html>

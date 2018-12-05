@@ -2,8 +2,6 @@ package com.epam.training.application.configuration;
 
 import javax.sql.DataSource;
 
-import com.epam.training.application.dao.StudentDao;
-import com.epam.training.application.service.CourseService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

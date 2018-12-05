@@ -1,7 +1,6 @@
 package com.epam.training.application.domain;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
@@ -11,7 +10,7 @@ public class Course {
     private Date startDate;
     private Date endDate;
     private Teacher teacher;
-    private List<Student> students;
+    private List<User> users;
 
 
     public Course(String name, Date startDate, Date endDate, Teacher teacher) {
@@ -64,11 +63,11 @@ public class Course {
         this.teacher = teacher;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public List<User> getUsers() {
+        return users;
     }
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     @Override

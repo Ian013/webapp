@@ -1,11 +1,9 @@
 package com.epam.training.application.dao.jbdc.mapper;
 
-import com.epam.training.application.dao.jbdc.TeacherDaoImpl;
 import com.epam.training.application.domain.Archive;
 import com.epam.training.application.domain.Course;
-import com.epam.training.application.domain.Student;
+import com.epam.training.application.domain.User;
 import com.epam.training.application.domain.Teacher;
-import com.epam.training.application.service.impl.TeacherServiceImpl;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -19,7 +17,7 @@ public class ArchiveRowMapper  implements RowMapper<Archive> {
         int id = rs.getInt(1);
         int note =rs.getInt(2);
 
-        Student student = new Student(
+        User user = new User(
                  rs.getInt(10)
                 ,rs.getString(11)
                 ,rs.getString(12));
@@ -35,6 +33,6 @@ public class ArchiveRowMapper  implements RowMapper<Archive> {
                         rs.getString(15)
         ));
 
-        return new Archive(id,note,student,course);
+        return new Archive(id,note, user,course);
     }
 }

@@ -29,11 +29,11 @@ public class ArchiveDaoImpl implements ArchiveDao {
     public Integer saveOrUpdate(Archive archive) {
         KeyHolder holder = new GeneratedKeyHolder();
 
-        String sql = "INSERT INTO archive(note, student_id, course_id) values (?, ?,?)";
+        String sql = "INSERT INTO archive(note, user_id, course_id) values (?, ?,?)";
         jdbcTemplate.update((connection) -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, archive.getNote());
-            ps.setInt(2, archive.getStudent().getId());
+            ps.setInt(2, archive.getUser().getId());
             ps.setObject(3,archive.getCourse().getId());
             return ps;
         }, holder);
@@ -46,7 +46,7 @@ public class ArchiveDaoImpl implements ArchiveDao {
         return jdbcTemplate.queryForObject(
                 "SELECT * FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
-                        "JOIN student s on archive.student_id = s.id " +
+                        "JOIN user s on archive.student_id = s.id " +
                         "JOIN teacher on c2.teacher_id = teacher.id" +
                         " WHERE archive.id =?",
                 new ArchiveRowMapper(),id);
@@ -56,7 +56,7 @@ public class ArchiveDaoImpl implements ArchiveDao {
         return jdbcTemplate.queryForObject(
                     "SELECT * FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
-                        "JOIN student s on archive.student_id = s.id " +
+                        "JOIN user s on archive.student_id = s.id " +
                         "JOIN teacher t on c2.teacher_id = t.id" +
                         "WHERE s.id =?",
                 new ArchiveRowMapper(),studentId);
@@ -80,7 +80,7 @@ public class ArchiveDaoImpl implements ArchiveDao {
         return jdbcTemplate.query(
                     "SELECT * FROM archive " +
                         "JOIN course c2 on archive.course_id = c2.id " +
-                        "JOIN student s on archive.student_id = s.id " +
+                        "JOIN user s on archive.student_id = s.id " +
                         "JOIN teacher t on c2.teacher_id = t.id",
                 new ArchiveRowMapper());
     }

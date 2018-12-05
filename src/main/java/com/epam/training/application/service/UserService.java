@@ -1,9 +1,9 @@
 package com.epam.training.application.service;
 
 import com.epam.training.application.domain.Course;
-import com.epam.training.application.domain.Student;
+import com.epam.training.application.domain.User;
 
-public interface StudentService extends BasicService<Student> {
+public interface UserService extends BasicService<User> {
 
     Integer addCourse(int studentId,Course course);
 }

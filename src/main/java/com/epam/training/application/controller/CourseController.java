@@ -1,10 +1,8 @@
 package com.epam.training.application.controller;
 
 import com.epam.training.application.domain.Course;
-import com.epam.training.application.domain.Teacher;
 import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.TeacherService;
-import com.epam.training.application.service.impl.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,22 +23,18 @@ public class CourseController {
         this.teacherService = teacherService;
     }
 
-    @RequestMapping(value = "/")
-    public String index(){
-        return "welcome";
-    }
 
     @RequestMapping(value = "/courses",method = RequestMethod.GET)
     public String getCourses(Model model){
         List<Course> courses = courseService.getAll();
         model.addAttribute("courses", courses);
         model.addAttribute("teachers",teacherService.getAll());
-        return "courses";
+        return "deprecated/courses";
     }
     @RequestMapping(value="/add-course" , method = RequestMethod.GET)
     public String addCoursePage(Model model){
         model.addAttribute("teachers",teacherService.getAll());
-        return "add-course";
+        return "deprecated/add-course";
     }
 
     @RequestMapping(value="/courses", method = RequestMethod.POST)
