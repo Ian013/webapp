@@ -1,7 +1,11 @@
 package com.epam.training.application.domain;
 
+import java.util.List;
+
 public class Role {
     private int id;
+    private String name;
+    private List<User> users;
 
     public int getId() {
         return id;
@@ -18,5 +22,5 @@ public class Role {
         this.name = name;
     }
 
-    private String name;
+
 }

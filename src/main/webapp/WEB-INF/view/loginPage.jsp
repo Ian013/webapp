@@ -12,9 +12,8 @@
 
 <c:if test="${not empty error}"><div>${error}</div></c:if>
 <c:if test="${not empty message}"><div>${message}</div></c:if>
-
 <form name='login' action="<c:url value='/loginPage' />" method='POST'>
-    <table>
+ <table>
         <tr>
             <td>UserName:</td>
             <td>
@@ -35,10 +34,11 @@
             <td colspan='2'><input name="submit" type="submit" value="submit" /></td>
         </tr>
     </table>
-    <!--<div class="container">
+</form> <!--
+  <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <form>
+                    <form name='login' action="<c:url value='/loginPage' />" method='POST'>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name='username'>
@@ -54,9 +54,9 @@
                     </form>
                 </div>
             </div>
-        </div>-->
-
+    </div>
+-->
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-</form>
+
 </body>
 </html>

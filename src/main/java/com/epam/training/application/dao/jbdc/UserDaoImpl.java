@@ -30,12 +30,14 @@ public class UserDaoImpl implements UserDao {
     public Integer saveOrUpdate(User user) {
         KeyHolder holder = new GeneratedKeyHolder();
 
-        String sql = "INSERT INTO user(firstName, lastName, registerDate, email, password, enabled) values (?,?, ?,?,?,?)";
+        String sql = "INSERT INTO user(firstName, lastName, registerDate, email, password, enabled) values (?,?, ?,?,?,?);"
+                // "insert into user_has_role(user_id, role_id) VALUES (?,2)"
+                ;
         jdbcTemplate.update((connection) -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getFirstName());
             ps.setString(2, user.getLastName());
-            ps.setObject(3,new Date(11111111111111L));
+            ps.setObject(3,new Date(System.currentTimeMillis()));
             ps.setString(4,user.getEmail());
             ps.setString(5,new BCryptPasswordEncoder().encode(user.getPassword()));
             ps.setBoolean(6,true);
@@ -54,14 +56,18 @@ public class UserDaoImpl implements UserDao {
                         pr.setInt(2,courseId);
                         return pr;
             },holder);
-        String sql ="INSERT INTO";
+        return null;
+    }
+
+    public Integer removeCourse(int studentId,int courseId){
         return null;
     }
 
     @Override
     public User getById(int id) {
         return jdbcTemplate.queryForObject(
-                "SELECT * FROM user WHERE user.id = ?"
+                "SELECT user.id, firstName, lastName,registerDate, email, password, enabled  " +
+                        "FROM user  WHERE user.id = ?"
                 ,new UserRowMapper(),id);
     }
 
@@ -72,26 +78,33 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getStudentsFromCourse(int courseId) {
-        return jdbcTemplate.query("SELECT user.id,user.firstName,user.lastName " +
+        return jdbcTemplate.query("SELECT user.id, firstName, lastName,registerDate, email, password, enabled  " +
                 "FROM user JOIN user_has_course shc on user.id = shc.user_id " +
                         "WHERE shc.course_id=? "
                 ,new UserRowMapper(),courseId);
     }
 
     @Override
+    public User getUserByEmail(String email) {
+        return jdbcTemplate.queryForObject("select * from user where user.email=?",
+                new UserRowMapper(),email);
+    }
+
+    @Override
     public List<User> getAllStudents() {
-        return jdbcTemplate.query("SELECT user.firstName,user.lastName" +
+        return jdbcTemplate.query("SELECT user.id, firstName, lastName,registerDate, email, password, enabled " +
                 " from user join user_has_role uhr on user.id = uhr.user_id" +
                 " where uhr.role_id = 2",new UserRowMapper());
     }
 
     @Override
-    public List<User> getAllTeachers() {//test
-        return jdbcTemplate.query("select user.email,role.name from user" +
+    public List<User> getAllTeachers() {
+        return jdbcTemplate.query("select user.id, firstName, lastName,registerDate, email, password, enabled from user" +
                 " join user_has_role uhr on user.id = uhr.user_id " +
-                        "join role on uhr.role_id = role.id where user.email=?"
+                        " where uhr.user_id=3"
                 ,new UserRowMapper());
     }
+
 
     @Override
     public Integer remove(int id) {

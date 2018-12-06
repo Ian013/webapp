@@ -1,6 +1,6 @@
 package com.epam.training.application.domain;
 
-import javax.management.relation.Role;
+
 import java.util.List;
 
 public class User {
@@ -67,6 +67,13 @@ public class User {
         this.password = password;
     }
 
+    public List<Role> getRoles() {
+        return roles;
+    }
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -75,4 +82,5 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+
 }

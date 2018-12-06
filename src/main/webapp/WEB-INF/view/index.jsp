@@ -1,11 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: 1
-  Date: 04.12.2018
-  Time: 20:13
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +46,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">All courses</a></li>
+                <li><a href="courses">All courses</a></li>
                 <c:if test="${pageContext.request.isUserInRole('admin')}">
                     <li><a href="users">Users</a></li>
                 </c:if>

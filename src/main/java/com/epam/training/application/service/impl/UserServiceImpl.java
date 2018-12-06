@@ -56,4 +56,11 @@ public class UserServiceImpl implements UserService {
         user.setCourses(courses);
         return course.getId();
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        if(email!=null){
+        return userDao.getUserByEmail(email);
+        }else throw new IllegalArgumentException("Email is null!");
+    }
 }
