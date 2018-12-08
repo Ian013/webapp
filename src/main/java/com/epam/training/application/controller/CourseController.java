@@ -29,7 +29,7 @@ public class CourseController {
         List<Course> courses = courseService.getAll();
         model.addAttribute("courses", courses);
         model.addAttribute("teachers",teacherService.getAll());
-        return "deprecated/courses";
+        return "courses";
     }
     @RequestMapping(value="/add-course" , method = RequestMethod.GET)
     public String addCoursePage(Model model){

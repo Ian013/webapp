@@ -19,7 +19,7 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
+    public void configAuthentication(AuthenticationManagerBuilder authenticationMgr) throws Exception {
             authenticationMgr
                     .jdbcAuthentication()
                     .dataSource(ds)
@@ -35,21 +35,23 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                 .antMatchers("/courses")
-                .access("hasRole('student')")
-
-                .anyRequest()
-                .permitAll()
+                    .antMatchers("/courses")
+                    .access("hasAuthority('student')")
+                    .anyRequest()
+                    .permitAll()
                 .and()
-
-                .formLogin().loginPage("/loginPage")
-                .usernameParameter("username")
-                .passwordParameter("password")
+                    .formLogin()
+                    .loginPage("/loginPage")
+                    .defaultSuccessUrl("/")
+                    .failureUrl("/loginPage?error")
+                    .usernameParameter("username")
+                    .passwordParameter("password")
                 .and()
-                .logout().logoutSuccessUrl("/loginPage?logout").and()
-                .exceptionHandling().accessDeniedPage("/index")
+                    .logout().logoutSuccessUrl("/loginPage?logout").and()
+                    .exceptionHandling()
+                    .accessDeniedPage("/403")
                 .and()
-                .csrf();
+                    .csrf().disable();
     }
 
 

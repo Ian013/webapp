@@ -16,8 +16,8 @@ public class MainController {
         this.courseService = courseService;
     }
 
-    @RequestMapping(value = "/error",method = RequestMethod.GET)
-    public String errorMap()    {
+    @RequestMapping(value = "/403",method = RequestMethod.GET)
+    public String errorMapping()    {
         return "error" ;
     }
 

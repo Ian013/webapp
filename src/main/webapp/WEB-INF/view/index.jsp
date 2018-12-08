@@ -29,7 +29,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <h1>COURSES</h1>
-        <p>Knowlege is power</p>
+        <p>Hello, ${pageContext.request.userPrincipal}</p>
     </div>
 </div>
 
