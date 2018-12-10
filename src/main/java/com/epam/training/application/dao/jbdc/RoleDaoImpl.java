@@ -49,4 +49,10 @@ public class RoleDaoImpl implements RoleDao {
                 " join user_has_role uhr on role.id = uhr.role_id where uhr.user_id=?"
                 ,new RoleRowMapper(),userId);
     }
+
+    @Override
+    public int setRoleForUser(int userId,int roleId) {
+            return jdbcTemplate.update("insert into user_has_role(user_id, role_id)" +
+                    " values (?,?)",userId,roleId);
+    }
 }

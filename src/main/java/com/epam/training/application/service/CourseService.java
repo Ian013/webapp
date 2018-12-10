@@ -10,4 +10,6 @@ public interface CourseService extends BasicService<Course> {
     List<Course> getCoursesForStudent(int studentId);
     Integer addStudent(int courseId, User user);
 
+
+    List<Course> getCoursesForTeacher(int teacherId);
 }

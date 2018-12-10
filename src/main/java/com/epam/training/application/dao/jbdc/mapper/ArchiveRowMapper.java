@@ -3,7 +3,6 @@ package com.epam.training.application.dao.jbdc.mapper;
 import com.epam.training.application.domain.Archive;
 import com.epam.training.application.domain.Course;
 import com.epam.training.application.domain.User;
-import com.epam.training.application.domain.Teacher;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -27,7 +26,7 @@ public class ArchiveRowMapper  implements RowMapper<Archive> {
                 rs.getString(6),
                 rs.getDate(8),
                 rs.getDate(9),
-                new Teacher(
+                new User(
                         rs.getInt(13),
                         rs.getString(14),
                         rs.getString(15)

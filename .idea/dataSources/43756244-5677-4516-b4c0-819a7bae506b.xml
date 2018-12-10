@@ -1221,7 +1221,7 @@ teacher_id</ColNames>
     <foreign-key id="305" parent="281" name="fk_course_teacher1">
       <ColNames>teacher_id</ColNames>
       <RefSchemaName>faculty</RefSchemaName>
-      <RefTableName>teacher</RefTableName>
+      <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="306" parent="282" name="id">

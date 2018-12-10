@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/getCoursesForStudent.js"></script>
     <style>
         .navbar {
             margin-bottom: 50px;
@@ -29,7 +30,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <h1>COURSES</h1>
-        <p>Hello, ${pageContext.request.userPrincipal}</p>
+        <p>Sample text</p>
     </div>
 </div>
 
@@ -47,15 +48,18 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="courses">All courses</a></li>
-                <c:if test="${pageContext.request.isUserInRole('admin')}">
+                <sec:authorize access="hasAuthority('admin')">
                     <li><a href="users">Users</a></li>
-                </c:if>
+                </sec:authorize>
+                <sec:authorize access="hasAuthority('student')">
+                    <li><a href="${pageContext.request.contextPath}/showCoursesForStudent" id='showMyCourses'>My Courses</a></li>
+                </sec:authorize>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <c:if test="${pageContext.request.userPrincipal==null}">
                     <li><a href="loginPage"><span class="glyphicon glyphicon-user"></span> Log in</a></li>
-                    <li><a href="registerPage"><span class="glyphicon glyphicon-shopping-cart"></span> Sign up</a></li>
+                    <li><a href="registerPage"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                 </c:if>
                 <c:if test="${pageContext.request.userPrincipal!=null}">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
@@ -66,8 +70,15 @@
                     <form id="logout" action="${logoutUrl}" method="post" >
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </form>
-
                 </c:if>
+                <sec:authorize access="hasAuthority('teacher')">
+                    My Courses:
+                    <li>
+                        <c:forEach var="course" items="${courseForTeacher}">
+
+                        </c:forEach>
+                    </li>
+                </sec:authorize>
             </ul>
         </div>
     </div>
@@ -79,12 +90,39 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">${course.name}</div>
                 <div class="panel-body">{course.description}</div>
-                <div class="panel-footer">sample text</div>
+                <div class="panel-footer">
+                    <a href="/addCourse/${course.id}">Add</a>
+                </div>
             </div>
         </div>
         </c:forEach>
     </div>
-</div><br><br>
+</div><br>
+<br>
+<sec:authorize access="hasAuthority('student')">
+    <c:if test="${not empty myCourses}">
+<div id ="myCoursesTable">
+    <h1>MyCourses</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Teacher</th>
+        </tr>
+        <c:forEach var="course" items="${myCourses}">
+            <tr id ="courseTable">
+                <td>${course.name}</td>
+                <td>${course.startDate}</td>
+                <td>${course.endDate}</td>
+                <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
+                <td><a href="/deleteMyCourse/${course.id}">Delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+    </c:if>
+</div>
+</sec:authorize>
 
 <footer class="container-fluid text-center">
     <p>Footer</p>

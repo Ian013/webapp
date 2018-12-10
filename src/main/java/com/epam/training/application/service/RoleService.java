@@ -7,4 +7,5 @@ import java.util.List;
 public interface RoleService extends BasicService<Role> {
 
     List<Role> getRolesForUser(int userId);
+    int setRoleForUser(int userId,int roleId);
 }

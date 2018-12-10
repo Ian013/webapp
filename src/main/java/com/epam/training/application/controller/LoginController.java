@@ -1,6 +1,7 @@
 package com.epam.training.application.controller;
 
 import com.epam.training.application.domain.User;
+import com.epam.training.application.service.RoleService;
 import com.epam.training.application.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     private final UserService userService;
+    private final RoleService roleService;
 
     @Autowired
-    public LoginController(UserService userService) {
+    public LoginController(UserService userService, RoleService roleService) {
         this.userService = userService;
+        this.roleService = roleService;
     }
 
     @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
@@ -40,23 +43,16 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registration(
-                               @RequestAttribute("firstName") String firstName,
-                               @RequestAttribute("lastName")String lastName,
-                               @RequestAttribute("email")String email,
-                               @RequestAttribute("password")String password,
-                               @RequestAttribute("passwordConfirmation")String passConfirm
-                               ) {
-        if(password.equals(passConfirm)) {
-            User user = new User();
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            user.setPassword(password);
-            user.setEmail(email);
+    public String registration(@ModelAttribute("userForm") User userForm,
+                               BindingResult result) {
 
-            userService.saveOrUpdate(user);
+        if(result.hasErrors()) {
+            return "register";
         }
 
-        return "redirect:/welcome";
+        userService.saveOrUpdate(userForm);
+        roleService.setRoleForUser(userService.getUserByEmail(userForm.getEmail()).getId()
+                ,2);
+        return "redirect:/loginPage";
     }
 }

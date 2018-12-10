@@ -13,15 +13,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
-/*
-@Service
+
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserService userService;
 
     private final RoleService roleService;
 
-    @Autowired
+
     public UserDetailsServiceImpl(UserService userService, RoleService roleService) {
         this.userService = userService;
         this.roleService = roleService;
@@ -43,4 +42,3 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
 }
-*/

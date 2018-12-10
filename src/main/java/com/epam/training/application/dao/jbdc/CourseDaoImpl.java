@@ -41,18 +41,17 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public Integer remove(int id) {
-        KeyHolder holder = new GeneratedKeyHolder();
-        String sql = "DELETE FROM course WHERE course.id= ?;" +
-                    " DELETE FROM user_has_course where course_id =?";
-        jdbcTemplate.update(sql,id,id,holder);
-        return holder.getKey().intValue();
+        jdbcTemplate.update(" DELETE FROM user_has_course where course_id=?",id);
+
+        return jdbcTemplate.update("DELETE FROM course WHERE course.id= ?;",id);
+      //  return holder.getKey().intValue();
     }
 
     @Override
     public Course getById(int id) {
         return jdbcTemplate.queryForObject(
-                "SELECT course.id,course.name,startDate,endDate,t.id,t.firstName,t.lastName " +
-                        "FROM course JOIN teacher t WHERE course.id = ? AND teacher_id=t.id"
+                "SELECT course.id,course.name,startDate,endDate,teacher_id,t.id,t.firstName,t.lastName " +
+                        "FROM course JOIN user t WHERE course.id = ? AND course.teacher_id=t.id"
                 ,new CourseRowMapper(),id);
     }
 
@@ -60,7 +59,7 @@ public class CourseDaoImpl implements CourseDao {
     public List<Course> getAll() {
         return jdbcTemplate.query(
                 "SELECT course.id,course.name,startDate,endDate,course.teacher_id,t.firstName,t.lastName" +
-                        " FROM course JOIN teacher t WHERE course.teacher_id=t.id"
+                        " FROM course JOIN user t WHERE course.teacher_id=t.id"
                 ,new CourseRowMapper());
     }
 
@@ -69,8 +68,14 @@ public class CourseDaoImpl implements CourseDao {
         return jdbcTemplate.query(
                 "SELECT course.id, course.name, course.teacher_id,startDate,endDate,t.firstName,t.lastName" +
                 " FROM course JOIN user_has_course shc on course.id = shc.course_id  " +
-                        "join teacher t " +
-                "JOIN user s on shc.user_id=s.id  WHERE s.id =? and course.teacher_id=t.id",
+                        "join user t " +
+                "JOIN user s on shc.user_id=s.id  WHERE s.id =? and course.teacher_id=t.id ",
                 new CourseRowMapper(),studentId);
+    }
+
+    @Override
+    public List<Course> getCoursesForTeacher(int teacherId) {
+        return jdbcTemplate.query("SELECT course.id,course.name,startDate,endDate,course.teacher_id,u.firstName,u.lastName" +
+                " FROM course JOIN user u on course.teacher_id=u.id WHERE course.teacher_id = ? ", new CourseRowMapper(),teacherId);
     }
 }

@@ -11,16 +11,15 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
 @Configuration
-@PropertySource("classpath:application.properties")
 public class ContextConfiguration {
 
 	@Bean
-	@ConditionalOnProperty(prefix = "my.db", name = "name", havingValue = "pg",matchIfMissing = false)
 	public DataSource ds() {
 		DriverManagerDataSource driver = new DriverManagerDataSource();
 		driver.setUrl("jdbc:mysql://localhost:3306/faculty?serverTimezone=UTC");
 		driver.setUsername("admin");
 		driver.setPassword("001201313");
+
 		return driver;
 	}
 

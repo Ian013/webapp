@@ -12,8 +12,10 @@ public class RootConfig implements WebMvcConfigurer{
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/WEB-INF/view/**")
-                .addResourceLocations("/WEB-INF/view/","/WEB-INF/view/resources/");
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations("/WEB-INF/view/","/WEB-INF/resources/");
+        registry.addResourceHandler("/js/**")
+                .addResourceLocations("/WEB-INF/resources/javascript/");
 
     }
 }

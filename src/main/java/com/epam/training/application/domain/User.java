@@ -1,7 +1,10 @@
 package com.epam.training.application.domain;
 
 
+import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
+
 
 public class User {
 

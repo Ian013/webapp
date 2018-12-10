@@ -9,17 +9,17 @@ public class Course {
     private String name;
     private Date startDate;
     private Date endDate;
-    private Teacher teacher;
+    private User teacher;
     private List<User> users;
 
 
-    public Course(String name, Date startDate, Date endDate, Teacher teacher) {
+    public Course(String name, Date startDate, Date endDate, User teacher) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.teacher = teacher;
     }
-    public Course(int id, String name, Date startDate, Date endDate,Teacher teacher) {
+    public Course(int id, String name, Date startDate, Date endDate,User teacher) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
@@ -56,10 +56,10 @@ public class Course {
         this.id = id;
     }
 
-    public Teacher getTeacher() {
+    public User getTeacher() {
         return teacher;
     }
-    public void setTeacher(Teacher teacher) {
+    public void setTeacher(User teacher) {
         this.teacher = teacher;
     }
 

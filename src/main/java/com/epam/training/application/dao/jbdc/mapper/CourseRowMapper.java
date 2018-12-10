@@ -1,8 +1,7 @@
 package com.epam.training.application.dao.jbdc.mapper;
 
 import com.epam.training.application.domain.Course;
-import com.epam.training.application.domain.Teacher;
-import com.epam.training.application.service.TeacherService;
+import com.epam.training.application.domain.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.Date;
@@ -21,7 +20,7 @@ public class CourseRowMapper implements RowMapper<Course> {
         Date endDate = (Date)resultSet.getObject("endDate");
         String teacherFirstName = resultSet.getString("firstName");
         String teacherLastName = resultSet.getString("lastName");
-        Teacher teacher = new Teacher(teacherId,teacherFirstName,teacherLastName);
+        User teacher = new User(teacherId,teacherFirstName,teacherLastName);
 
         return new Course(id,name,startDate,endDate,teacher);
     }

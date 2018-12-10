@@ -11,8 +11,6 @@ public interface UserDao extends BasicDao<User>{
     User getUserByEmail(String email);
     List<User> getAllStudents();
     List<User> getAllTeachers();
-
-   // List<Role> getRolesForUser(int id);
-
     Integer addCourse(int studentId,int courseId);
+    Integer removeCourseForStudent(int studentId,int courseId);
 }

@@ -1,13 +1,16 @@
 package com.epam.training.application.controller;
 
 import com.epam.training.application.domain.Course;
+import com.epam.training.application.domain.User;
 import com.epam.training.application.service.CourseService;
-import com.epam.training.application.service.TeacherService;
+import com.epam.training.application.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.List;
 
@@ -15,42 +18,60 @@ import java.util.List;
 public class CourseController {
 
     private final CourseService courseService;
-    private final TeacherService teacherService;
+    private final UserService userService;
 
     @Autowired
-    public CourseController(CourseService courseService, TeacherService teacherService) {
+    public CourseController(CourseService courseService,  UserService userService) {
         this.courseService = courseService;
-        this.teacherService = teacherService;
+        this.userService = userService;
     }
 
 
     @RequestMapping(value = "/courses",method = RequestMethod.GET)
-    public String getCourses(Model model){
+    public String getCourses(Model model, Authentication auth){
         List<Course> courses = courseService.getAll();
+        if(auth.isAuthenticated()) {
+            User user = userService.getUserByEmail(auth.getName());
+            if(courseService.getCoursesForStudent(user.getId())!=null){
+                model.addAttribute("myCourses", courseService.getCoursesForStudent(user.getId()));
+            }
+        }
         model.addAttribute("courses", courses);
-        model.addAttribute("teachers",teacherService.getAll());
+        model.addAttribute("teachers",userService.getAllTeachers());
         return "courses";
-    }
-    @RequestMapping(value="/add-course" , method = RequestMethod.GET)
-    public String addCoursePage(Model model){
-        model.addAttribute("teachers",teacherService.getAll());
-        return "deprecated/add-course";
     }
 
     @RequestMapping(value="/courses", method = RequestMethod.POST)
-    public String addNewCourse(@RequestParam(value = "title")String title,
-                               @RequestParam(value = "startDate")Date start,
-                               @RequestParam(value = "endDate")Date endDate,
-                               @RequestParam(value = "teacher") int teacherId){
+    public String addNewCourse(@RequestParam(value = "title")@NotNull  String title,
+                               @RequestParam(value = "startDate")@NotNull Date start,
+                               @RequestParam(value = "endDate")@NotNull Date endDate,
+                               @RequestParam(value = "teacher")@NotNull  int teacherId){
 
-        Course course = new Course(title,start, endDate,teacherService.getById(teacherId));
+        Course course = new Course(title,start, endDate,userService.getById(teacherId));
         courseService.saveOrUpdate(course);
         return "redirect:/courses";
     }
 
     @RequestMapping(value="delete/{id}", method=RequestMethod.GET)
-    public String deleteItem(@PathVariable Integer id) {
+    public String deleteCourse(@PathVariable Integer id) {
         courseService.remove(id);
         return "redirect:/courses";
+    }
+    @RequestMapping(value="deleteMyCourse/{id}")
+    public String deleteCourseForStudent(@PathVariable int id,Authentication auth){
+        User user = userService.getUserByEmail(auth.getName());
+        userService.removeCourseForUser(user.getId(),id);
+        return "redirect:/courses";
+    }
+    @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
+    public  String addCourseForStudent(@PathVariable Integer id, Authentication auth){
+        User user = userService.getUserByEmail(auth.getName());
+        userService.addCourse(user.getId(),id);
+        return "redirect:/";
+    }
+    @RequestMapping(value = "showCoursesForStudent",method = RequestMethod.GET)
+    public String showCoursesForStudent(Authentication auth,Model model){
+        getCourses(model, auth);
+        return "redirect:/";
     }
 }

@@ -54,4 +54,9 @@ public class CourseServiceImpl implements CourseService {
         course.setUsers(users);
         return user.getId();
     }
+
+    @Override
+    public List<Course> getCoursesForTeacher(int teacherId) {
+        return courseDao.getCoursesForTeacher(teacherId);
+    }
 }

@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
@@ -25,18 +25,21 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
                     .dataSource(ds)
                     .usersByUsernameQuery(
                             "SELECT user.email,user.password,user.enabled " +
-                            "from user WHERE email = ?"
-            ).authoritiesByUsernameQuery("select user.email,role.name,user.enabled from user" +
-                    " join user_has_role uhr on user.id = uhr.user_id " +
-                    "join role on uhr.role_id = role.id where user.email=?");
+                            "FROM user WHERE email = ?"
+            ).authoritiesByUsernameQuery(
+                    "SELECT user.email,role.name,user.enabled FROM user " +
+                    "JOIN user_has_role uhr on user.id = uhr.user_id " +
+                    "JOIN role on uhr.role_id = role.id WHERE user.email=?");
 
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                    .antMatchers("/courses")
+                    .antMatchers("/courses","/addCourse/*")
                     .access("hasAuthority('student')")
+                .antMatchers("/delete/**","/addCourse/**")
+                    .hasAuthority("admin")
                     .anyRequest()
                     .permitAll()
                 .and()
@@ -47,7 +50,11 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
                     .usernameParameter("username")
                     .passwordParameter("password")
                 .and()
-                    .logout().logoutSuccessUrl("/loginPage?logout").and()
+                    .logout()
+                    .invalidateHttpSession(true)
+                    .clearAuthentication(true)
+                    .logoutSuccessUrl("/loginPage?logout")
+                .and()
                     .exceptionHandling()
                     .accessDeniedPage("/403")
                 .and()
@@ -58,7 +65,7 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
     private final DataSource ds;
 
     @Autowired
-    public LoginSecurityConfig(DataSource ds) {
+    public SecurityConfig(DataSource ds) {
         this.ds = ds;
     }
 

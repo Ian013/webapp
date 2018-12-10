@@ -8,4 +8,6 @@ public interface RoleDao extends BasicDao<Role> {
 
 
     List<Role> getRolesForUser(int userId);
+
+    int setRoleForUser(int userId,int roleId);
 }

@@ -3,7 +3,7 @@ jQuery(document).ready(function(){
 
         var pass = $("#password");
         var fieldtype = pass.attr('type');
-        if (fieldtype == 'password') {
+        if (fieldtype === 'password') {
             pass.attr('type', 'text');
             $(this).text("Hide Password");
         }else{

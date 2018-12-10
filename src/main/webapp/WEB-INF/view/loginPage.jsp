@@ -4,7 +4,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="WEB-INF/resources/javascript/loginPageScript.js"></script>
+    <script src="${pageContext.request.contextPath}/js/loginPageScript.js"></script>
+    <link href="${pageContext.request.contextPath}/css/style.css"/>
     <title>Title</title>
 </head>
 <body onload='document.loginForm.username.focus();'>
@@ -12,29 +13,6 @@
 
 <c:if test="${not empty error}"><div>${error}</div></c:if>
 <c:if test="${not empty message}"><div>${message}</div></c:if>
-<form name='login' action="<c:url value='/loginPage' />" method='POST'>
- <table>
-        <tr>
-            <td>UserName:</td>
-            <td>
-                <label>
-                    <input type='text' name='username'>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td>
-                <label>
-                    <input type='password' name='password' />
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td colspan='2'><input name="submit" type="submit" value="submit" /></td>
-        </tr>
-    </table>
-</form> <!--
   <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -55,7 +33,7 @@
                 </div>
             </div>
     </div>
--->
+
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 </body>

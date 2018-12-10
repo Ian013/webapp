@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -21,23 +23,25 @@
     </style>
 </head>
 <body>
+
+<c:if test="${not empty error}"><div>${error}</div></c:if>
+
 <table>
     <table>
         <tr>
             <th>Name</th>
             <th></th>
-            <th>Role</th>
+            <th>Sample text</th>
         </tr>
-        <c:forEach var="user" items="${users}">
+        <c:forEach var="student" items="${students}">
             <tr>
-                <td>${user.firstName} ${user.lastName}</td>
-                <td><a href="/delete/${user.id}">Delete</a></td>
+                <td>${student.firstName} ${student.lastName}</td>
+                <td><a href="/delete/${student.id}">Delete</a></td>
                 <td></td>
             </tr>
         </c:forEach>
     </table>
 </table>
-<!--p><a href="add-user"></a> </p -->
 
 </body>
 </html>
