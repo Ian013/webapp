@@ -1,6 +1,5 @@
 package com.epam.training.application.service;
 
-import com.epam.training.application.domain.Course;
 import com.epam.training.application.domain.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 

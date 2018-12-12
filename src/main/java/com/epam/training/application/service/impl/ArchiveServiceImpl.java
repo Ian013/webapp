@@ -41,4 +41,14 @@ public class ArchiveServiceImpl implements ArchiveService {
     public Integer remove(int id) {
         return archiveDao.remove(id);
     }
+
+    @Override
+    public Integer setMarkForStudent(int courseId, int studentId, int mark) {
+        return archiveDao.setMarkForStudent(courseId, studentId, mark);
+    }
+
+    @Override
+    public Archive getArchiveNoteForStudent(int studentId) {
+        return archiveDao.getArchiveNoteForStudent(studentId);
+    }
 }

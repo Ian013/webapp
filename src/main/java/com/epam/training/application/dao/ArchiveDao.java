@@ -7,6 +7,8 @@ import java.util.List;
 public interface ArchiveDao extends BasicDao<Archive> {
 
     Archive getArchiveNoteForStudent(int studentId);
+    Integer setMarkForStudent(int courseId,int studentId,int mark);
 
-    Integer remove(Archive archive);
+
+    Integer remove(int archiveId);
 }

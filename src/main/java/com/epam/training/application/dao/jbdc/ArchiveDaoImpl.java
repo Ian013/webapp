@@ -63,9 +63,13 @@ public class ArchiveDaoImpl implements ArchiveDao {
     }
 
     @Override
-    public Integer remove(Archive archive) {
-        return null;
+    public Integer setMarkForStudent(int courseId, int studentId, int mark) {
+        return jdbcTemplate.update(
+                "INSERT INTO archive(note, student_id, course_id)" +
+                " values (?,?,?)",mark,studentId,courseId);
     }
+
+
 
     @Override
     public Integer remove(int id) {

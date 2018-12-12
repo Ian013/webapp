@@ -37,9 +37,11 @@ public class StudentController {
             User teacher = userService.getUserByEmail(auth.getName());
             List<Course> courses = courseService.getCoursesForTeacher(teacher.getId());
             try {
+
                 List<User> studentsForCourse = userService.getStudentsFromCourse(courses.get(0).getId());
                 // users.forEach((s)->s.setCourses(courseService.getCoursesForStudent(s.getId())));
-
+                model.addAttribute("courses",
+                        courseService.getCoursesForTeacher(teacher.getId()));
                 if(studentsForCourse!=null) {
                model.addAttribute("students", studentsForCourse);
            }}catch (IndexOutOfBoundsException e){

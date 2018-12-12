@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/getCoursesForStudent.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dropdownStyle.css">
     <style>
         .navbar {
             margin-bottom: 50px;
@@ -52,7 +53,7 @@
                     <li><a href="users">Users</a></li>
                 </sec:authorize>
                 <sec:authorize access="hasAuthority('student')">
-                    <li><a href="${pageContext.request.contextPath}/showCoursesForStudent" id='showMyCourses'>My Courses</a></li>
+                    <li><a href="${pageContext.request.contextPath}/showCoursesForStudent">My Courses</a></li>
                 </sec:authorize>
 
             </ul>
@@ -71,14 +72,6 @@
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </form>
                 </c:if>
-                <sec:authorize access="hasAuthority('teacher')">
-                    My Courses:
-                    <li>
-                        <c:forEach var="course" items="${courseForTeacher}">
-
-                        </c:forEach>
-                    </li>
-                </sec:authorize>
             </ul>
         </div>
     </div>
@@ -100,7 +93,7 @@
 </div><br>
 <br>
 <sec:authorize access="hasAuthority('student')">
-    <c:if test="${not empty myCourses}">
+
 <div id ="myCoursesTable">
     <h1>MyCourses</h1>
     <table>
@@ -110,7 +103,7 @@
             <th>End</th>
             <th>Teacher</th>
         </tr>
-        <c:forEach var="course" items="${myCourses}">
+        <c:forEach var="course" items="${userCourses}">
             <tr id ="courseTable">
                 <td>${course.name}</td>
                 <td>${course.startDate}</td>
@@ -120,15 +113,14 @@
             </tr>
         </c:forEach>
     </table>
-    </c:if>
+
 </div>
 </sec:authorize>
 
 <footer class="container-fluid text-center">
     <p>Footer</p>
     <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
+        <button type="button" class="btn btn-danger" id="showMyCourses">My Courses</button>
     </form>
 </footer>
 

@@ -7,6 +7,8 @@ public class Archive {
     private User user;
     private Course course;
 
+    public Archive(){}
+
     public Archive(int id, int note, User user, Course course) {
         this.id =id;
         this.user = user;

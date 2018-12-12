@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.Objects;
+
 @Controller
 public class LoginController {
 
@@ -43,16 +46,31 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registration(@ModelAttribute("userForm") User userForm,
-                               BindingResult result) {
-
-        if(result.hasErrors()) {
-            return "register";
+    public String registration(@ModelAttribute("userForm")@Valid User userForm,
+                               BindingResult result,Model model) {
+            if(result.hasErrors()) {
+                return "registerPage";
+            }
+        if(Objects.equals(userForm.getEmail(), "")
+                || Objects.equals(userForm.getPassword(), "")
+        ||Objects.equals(userForm.getFirstName(),"")
+        ||Objects.equals(userForm.getLastName(),"")){
+            if(userService.getAll()
+                    .stream()
+                    .anyMatch((user)->user.getEmail().equals(userForm.getEmail()))){
+                model.addAttribute("error","Email already exists!");
+                return "registerPage";
+            }model.addAttribute("error","Invalid Attribute");
+            return "registerPage";
         }
 
-        userService.saveOrUpdate(userForm);
-        roleService.setRoleForUser(userService.getUserByEmail(userForm.getEmail()).getId()
-                ,2);
+              /*
+                }*/
+
+            userService.saveOrUpdate(userForm);
+            roleService.setRoleForUser(userService.getUserByEmail(userForm.getEmail()).getId()
+                    , 2);
+
         return "redirect:/loginPage";
     }
 }

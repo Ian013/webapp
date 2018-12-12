@@ -14,7 +14,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class ContextConfiguration {
 
 	@Bean
-	public DataSource ds() {
+	public DataSource dataSource() {
 		DriverManagerDataSource driver = new DriverManagerDataSource();
 		driver.setUrl("jdbc:mysql://localhost:3306/faculty?serverTimezone=UTC");
 		driver.setUsername("admin");
@@ -24,8 +24,8 @@ public class ContextConfiguration {
 	}
 
 	@Bean
-	public JdbcTemplate jdbcTemplate(DataSource ds) {
-		return new JdbcTemplate(ds);
+	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+		return new JdbcTemplate(dataSource);
 	}
 
 }

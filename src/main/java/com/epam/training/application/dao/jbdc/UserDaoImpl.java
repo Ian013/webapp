@@ -102,8 +102,8 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Integer remove(int id) {
        return jdbcTemplate.update(
-                "DELETE FROM user_has_course" +
-                        " WHERE user_id = ?;" +
+                "DELETE FROM user_has_course " +
+                        "WHERE user_id = ?;" +
                         "DELETE from user_has_role where user_id=? ;"+
                         "DELETE from user where id=?;"
                         ,id,id,id);

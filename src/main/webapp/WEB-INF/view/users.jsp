@@ -27,6 +27,7 @@
 <c:if test="${not empty error}"><div>${error}</div></c:if>
 
 <table>
+    <c:forEach var="course" items="${courses}">
     <table>
         <tr>
             <th>Name</th>
@@ -37,10 +38,11 @@
             <tr>
                 <td>${student.firstName} ${student.lastName}</td>
                 <td><a href="/delete/${student.id}">Delete</a></td>
-                <td></td>
+                <td><a href="/addMark/${student.id}"></a> </td>
             </tr>
         </c:forEach>
     </table>
+    </c:forEach>
 </table>
 
 </body>

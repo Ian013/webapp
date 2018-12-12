@@ -28,7 +28,7 @@ public class CourseController {
 
 
     @RequestMapping(value = "/courses",method = RequestMethod.GET)
-    public String getCourses(Model model, Authentication auth){
+    public String getCoursesForStudent(Model model, Authentication auth){
         List<Course> courses = courseService.getAll();
         if(auth.isAuthenticated()) {
             User user = userService.getUserByEmail(auth.getName());
@@ -66,12 +66,13 @@ public class CourseController {
     @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
     public  String addCourseForStudent(@PathVariable Integer id, Authentication auth){
         User user = userService.getUserByEmail(auth.getName());
-        userService.addCourse(user.getId(),id);
-        return "redirect:/";
+
+           userService.addCourse(user.getId(), id);
+       return "redirect:/";
     }
     @RequestMapping(value = "showCoursesForStudent",method = RequestMethod.GET)
     public String showCoursesForStudent(Authentication auth,Model model){
-        getCourses(model, auth);
-        return "redirect:/";
+        getCoursesForStudent(model, auth);
+        return "index";
     }
 }

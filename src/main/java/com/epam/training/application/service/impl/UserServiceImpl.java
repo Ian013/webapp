@@ -3,17 +3,22 @@ package com.epam.training.application.service.impl;
 import com.epam.training.application.dao.UserDao;
 import com.epam.training.application.domain.User;
 import com.epam.training.application.service.UserService;
+import com.mysql.cj.jdbc.exceptions.SQLError;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 
+    private final static Logger LOG = Logger.getLogger(UserServiceImpl.class);
     private final UserDao userDao;
 
 
@@ -52,8 +57,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Integer addCourse(int studentId,int courseId) {
-
-        return userDao.addCourse(studentId,courseId);
+        try {
+            return userDao.addCourse(studentId, courseId);
+        }catch(Exception e){//TODO: REWRITE
+            LOG.error(e.getMessage());
+            return -1;
+        }
     }
 
     @Override

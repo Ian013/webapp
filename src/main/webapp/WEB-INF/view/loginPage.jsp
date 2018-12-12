@@ -12,7 +12,7 @@
 <h3>Login</h3>
 
 <c:if test="${not empty error}"><div>${error}</div></c:if>
-<c:if test="${not empty message}"><div>${message}</div></c:if>
+<c:if test="${not empty message}"><div><h2>${message}</h2></div></c:if>
   <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
