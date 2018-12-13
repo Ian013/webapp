@@ -2,6 +2,7 @@ package com.epam.training.application.domain;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Course {
 
@@ -68,6 +69,25 @@ public class Course {
     }
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return id == course.id &&
+                Objects.equals(name, course.name) &&
+                Objects.equals(startDate, course.startDate) &&
+                Objects.equals(endDate, course.endDate) &&
+                Objects.equals(teacher, course.teacher) &&
+                Objects.equals(users, course.users);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, startDate, endDate, teacher, users);
     }
 
     @Override

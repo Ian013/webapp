@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $("#registerForm").validate({
         rules:{
             firstName:{
@@ -21,6 +22,12 @@ $(document).ready(function () {
                 minlenght:5,
                 maxlenght:15
             }
+        },
+        messages:{
+            username:"Invalid email!",
+            firstName:"Input your first name please!",
+            lastName:"Input your last name please!",
+            password:"Invalid pass"
         }
     })
 });

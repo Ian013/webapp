@@ -48,7 +48,7 @@ public class ArchiveServiceImpl implements ArchiveService {
     }
 
     @Override
-    public Archive getArchiveNoteForStudent(int studentId) {
-        return archiveDao.getArchiveNoteForStudent(studentId);
+    public List<Archive> getArchiveNotesForStudent(int studentId) {
+        return archiveDao.getArchiveNotesForStudent(studentId);
     }
 }

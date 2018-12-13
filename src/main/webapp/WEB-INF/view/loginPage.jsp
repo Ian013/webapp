@@ -19,7 +19,7 @@
                     <form name='login' action="<c:url value='/loginPage' />" method='POST'>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name='username'>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name='username'>
                         </div>
                         <div class="form-group">
                             <label >Password</label>
@@ -30,11 +30,10 @@
                             <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
+                    <a href="${pageContext.request.contextPath}/registerPage">Or register</a>
                 </div>
             </div>
     </div>
-
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </body>
 </html>

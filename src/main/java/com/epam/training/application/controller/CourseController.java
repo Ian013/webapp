@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
@@ -52,7 +55,7 @@ public class CourseController {
         return "redirect:/courses";
     }
 
-    @RequestMapping(value="delete/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="deleteCourse/{id}", method=RequestMethod.GET)
     public String deleteCourse(@PathVariable Integer id) {
         courseService.remove(id);
         return "redirect:/courses";
@@ -61,18 +64,26 @@ public class CourseController {
     public String deleteCourseForStudent(@PathVariable int id,Authentication auth){
         User user = userService.getUserByEmail(auth.getName());
         userService.removeCourseForUser(user.getId(),id);
-        return "redirect:/courses";
+        return "redirect:/";
     }
     @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
-    public  String addCourseForStudent(@PathVariable Integer id, Authentication auth){
+    public  String addCourseForStudent(@PathVariable Integer id, Authentication auth,Model model){
         User user = userService.getUserByEmail(auth.getName());
-
-           userService.addCourse(user.getId(), id);
-       return "redirect:/";
+        if(courseService.getCoursesForStudent(user.getId())
+                .stream()
+                .anyMatch((c)->c.equals(courseService.getById(id)))){
+            model.addAttribute("error","You already have this course!");
+                return "redirect:/";
+        }else{
+            userService.addCourse(user.getId(), id);
+            return "redirect:/";
+        }
     }
     @RequestMapping(value = "showCoursesForStudent",method = RequestMethod.GET)
     public String showCoursesForStudent(Authentication auth,Model model){
-        getCoursesForStudent(model, auth);
+        User user = userService.getUserByEmail(auth.getName());
+        model.addAttribute("coursesForStudent",
+                courseService.getCoursesForStudent(user.getId()));
         return "index";
     }
 }

@@ -5,45 +5,34 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+        <title>All students</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
 <c:if test="${not empty error}"><div>${error}</div></c:if>
-
-<table>
+<div class="container">
+<table class="table table-hover">
     <c:forEach var="course" items="${courses}">
-    <table>
+    <table class="table table-hover">
         <tr>
-            <th>Name</th>
-            <th></th>
-            <th>Sample text</th>
+            <th>${course.name}</th>
+            <th>${course.startDate} - ${course.endDate}</th>
         </tr>
-        <c:forEach var="student" items="${students}">
+        <c:forEach var="student" items="${course.users}">
             <tr>
                 <td>${student.firstName} ${student.lastName}</td>
-                <td><a href="/delete/${student.id}">Delete</a></td>
-                <td><a href="/addMark/${student.id}"></a> </td>
+
+                <td><a href="users/deleteStudent/${student.id}">Delete</a></td>
+                <td><a href="/addMark/${student.id}+${course.id}"></a> Mark</td>
             </tr>
         </c:forEach>
     </table>
     </c:forEach>
 </table>
-
+</div>
 </body>
 </html>

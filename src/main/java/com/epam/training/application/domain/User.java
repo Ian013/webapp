@@ -1,9 +1,7 @@
 package com.epam.training.application.domain;
 
 
-import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 
 public class User {
@@ -15,6 +13,7 @@ public class User {
     private String email;
     private String password;
     private List<Role> roles;
+
 
     public User() {
     }

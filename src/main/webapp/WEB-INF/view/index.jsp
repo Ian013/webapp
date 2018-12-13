@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/getCoursesForStudent.js"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dropdownStyle.css">
+    <script src="${pageContext.request.contextPath}/js/showCourses.js"></script>
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dropdownStyle.css">
     <style>
         .navbar {
             margin-bottom: 50px;
@@ -31,7 +31,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <h1>COURSES</h1>
-        <p>Sample text</p>
+        <p>${auth}</p>
     </div>
 </div>
 
@@ -48,14 +48,15 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="courses">All courses</a></li>
+                <li><a href="#actualCoursesTable" id="actualCourses">Actual Courses</a></li>
+                <li><a href="#allCoursesTable" id="allCourses">All Courses</a></li>
+                <sec:authorize access="hasAuthority('teacher')">
+                    <li><a href="#teacherCoursesTable" id="coursesForTeacher">Courses For Teacher</a></li>
+                </sec:authorize>
                 <sec:authorize access="hasAuthority('admin')">
-                    <li><a href="users">Users</a></li>
+                    <li><a href="users" >AllStudents</a></li>
+                    <li><a href="courses">All Courses(admin)</a></li>
                 </sec:authorize>
-                <sec:authorize access="hasAuthority('student')">
-                    <li><a href="${pageContext.request.contextPath}/showCoursesForStudent">My Courses</a></li>
-                </sec:authorize>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <c:if test="${pageContext.request.userPrincipal==null}">
@@ -63,10 +64,10 @@
                     <li><a href="registerPage"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                 </c:if>
                 <c:if test="${pageContext.request.userPrincipal!=null}">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                   <li>
+                    <li><a href="#myCoursesTable" id="showMyCourses"><span class="glyphicon glyphicon-user"></span> My Courses</a></li>
+                    <li>
                        <a href="javascript:document.getElementById('logout').submit()">Logout</a>
-                   </li>
+                    </li>
                     <c:url value="/logout" var="logoutUrl" />
                     <form id="logout" action="${logoutUrl}" method="post" >
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -76,52 +77,123 @@
         </div>
     </div>
 </nav>
-<div class="container">
-    <div class="row">
-        <c:forEach items="${courses}" var="course">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">${course.name}</div>
-                <div class="panel-body">{course.description}</div>
-                <div class="panel-footer">
-                    <a href="/addCourse/${course.id}">Add</a>
-                </div>
-            </div>
-        </div>
-        </c:forEach>
-    </div>
-</div><br>
-<br>
 <sec:authorize access="hasAuthority('student')">
 
-<div id ="myCoursesTable">
-    <h1>MyCourses</h1>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Teacher</th>
-        </tr>
-        <c:forEach var="course" items="${userCourses}">
+        <c:if test="${empty coursesForStudent}">
+        <p>You haven't chosen any course yet</p>
+    </c:if>
+        <c:if test="${not empty coursesForStudent}">
+            <div id ="myCoursesTable" class="container">
+                <h1>MyCourses</h1>
+                <table class="table table-hover">
+                    <tr>
+                    <th>Title</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Teacher</th>
+                </tr>
+                <c:forEach var="course" items="${coursesForStudent}">
+                    <tr id ="courseTable">
+                        <td>${course.name}</td>
+                        <td>${course.startDate}</td>
+                        <td>${course.endDate}</td>
+                        <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
+                        <td><a href="/deleteMyCourse/${course.id}">Delete</a></td>
+                    </tr>
+                </c:forEach>
+            </table>
+            </div>
+        </c:if>
+</sec:authorize>
+<sec:authorize access="hasAuthority('teacher')">
+        <c:if test="${not empty coursesForTeacher}">
+            <div id ="teacherCoursesTable" class="container">
+                <h1>Courses(for teacher)</h1>
+            <table class="table table-hover">
+                <c:forEach var="course" items="${coursesForTeacher}">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>${course.name}</th>
+                            <th>${course.startDate} - ${course.endDate}</th>
+                        </tr>
+                    <c:forEach var="student" items="${course.users}">
+                        <tr>
+                            <td>${student.firstName} ${student.lastName}</td>
+                            <td><a href="users/deleteStudent/${student.id}">Delete</a></td>
+                            <td>
+                                <form method="post" action="markStudent">
+                                <label>Mark
+                                    <input type="number" name="mark">
+                                </label>
+                                    <input type ="hidden" name="courseId" value="${course.id}">
+                                    <input type="hidden" name="studentId" value="${student.id}">
+                                <input type="submit" value="submit">
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                </c:forEach>
+            </table>
+        </div>
+        </c:if>
+</sec:authorize>
+
+    <div class="container" id="allCoursesTable">
+        <div class="row">
+        <h1>All courses</h1>
+        <table class="table table-hover">
+            <tr>
+                <th>Title</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Teacher</th>
+            </tr>
+        <c:forEach items="${courses}" var="course">
             <tr id ="courseTable">
-                <td>${course.name}</td>
+                <td><a href="/addCourse/${course.id}">${course.name} <c:if test="${course.startDate<currentDate}">(Already started)</a></c:if></td>
                 <td>${course.startDate}</td>
                 <td>${course.endDate}</td>
                 <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
-                <td><a href="/deleteMyCourse/${course.id}">Delete</a></td>
             </tr>
         </c:forEach>
-    </table>
+        </table>
+    </div>
+    </div>
+    <div class = "container" id="actualCoursesTable">
+        <div class="row">
+            <h1>Actual courses</h1>
+            <table class="table table-hover">
+                <tr>
+                    <th>Title</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Teacher</th>
+                </tr>
+                <c:forEach items="${courses}" var="course">
+                    <c:if test="${course.startDate>currentDate}">
+                    <tr id ="courseTable">
+                        <td><a href="/addCourse/${course.id}">${course.name}</a></td>
+                        <td>${course.startDate}</td>
+                        <td>${course.endDate}</td>
+                        <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
+                    </tr>
+                    </c:if>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
 
-</div>
+<sec:authorize access="hasAuthority('admin')">
+    <!--TODO -->
 </sec:authorize>
+
+
+<br>
+<br>
 
 <footer class="container-fluid text-center">
     <p>Footer</p>
-    <form class="form-inline">Get deals:
-        <button type="button" class="btn btn-danger" id="showMyCourses">My Courses</button>
-    </form>
 </footer>
 
 </body>

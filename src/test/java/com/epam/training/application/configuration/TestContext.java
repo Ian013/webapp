@@ -1,13 +1,10 @@
 package com.epam.training.application.configuration;
 
+import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.UserService;
 import org.mockito.Mockito;
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ResourceBundleMessageSource;
-
-import javax.ws.rs.core.Context;
 
 @Configuration
 public class TestContext {
@@ -24,6 +21,10 @@ public class TestContext {
     @Bean
     public UserService userService(){
         return Mockito.mock(UserService.class);
+    }
+    @Bean
+    public CourseService courseService(){
+        return Mockito.mock(CourseService.class);
     }
 
 }

@@ -10,22 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dropdownStyle.css">
-   <!--style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style-->
 </head>
 <body>
 <sec:authorize access="hasAuthority('admin')">
@@ -45,7 +29,7 @@
                     <td>${course.startDate}</td>
                     <td>${course.endDate}</td>
                     <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
-                    <td><a href="/delete/${course.id}">Delete</a></td>
+                    <td><a href="/deleteCourse/${course.id}">Delete</a></td>
                 </tr>
             </c:forEach>
     </table>
@@ -81,8 +65,10 @@
     </div>
 </sec:authorize>
 
-<h1>My courses</h1>
+
 <div class="container">
+    <h1>My courses</h1>
+    <c:if test="${not empty error}"><h3>${error}</h3></c:if>
 <table class="table table-hover">
         <tr>
             <th>Title</th>

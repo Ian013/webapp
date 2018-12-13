@@ -9,7 +9,8 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="/js/registerValidation.js"></script>
+    <script  src="http://dev.jquery.com/view/trunk/plugins/validate/jquery.validate.js"></script>
+    <script src="${pageContext.request.contextPath}/js/loginPageScript.js"></script>
 </head>
 <body>
 
@@ -32,36 +33,40 @@
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                      <form:label path="firstName" >FirstName</form:label>
-                                        <form:input path="firstName" class="form-control input-sm"/>
+                                    <form:label path="firstName" >FirstName</form:label>
+                                    <form:input path="firstName" class="form-control input-sm"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="lastName" >lastName</form:label>
-                                    <form:input path="lastName" class="form-control input-sm"/></div>
+                                    <form:input path="lastName" class="form-control input-sm"/>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <form:label path="email" >email</form:label>
-                            <form:input path="email" class="form-control input-sm"/>
+                            <form:input type="email" path="email" class="form-control input-sm"/>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="password">Password</form:label>
-                                    <form:input path="password" class="form-control input-sm"/>
+                                    <form:input type ="password" path="password" class="form-control input-sm"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="password" name="passwordConfirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                    <label>Confirm</label>
+                                    <input type="password" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                                 </div>
                             </div>
                         </div>
-                        <input  type="submit" value="submit" class="btn btn-info btn-block">
-                </form:form>
+                        <button class="btn btn-info" type="button" name="showpassword" id="showpassword" value="Show Password">Show password</button>
+                        <input  type="submit" value="submit" id = "submit" class="btn btn-info btn-block" >
+
+                    </form:form>
                 </div>
             </div>
         </div>

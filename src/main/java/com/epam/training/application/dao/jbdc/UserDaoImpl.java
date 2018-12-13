@@ -4,8 +4,6 @@ import com.epam.training.application.dao.UserDao;
 import com.epam.training.application.dao.jbdc.mapper.UserRowMapper;
 import com.epam.training.application.domain.User;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -101,12 +99,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Integer remove(int id) {
-       return jdbcTemplate.update(
-                "DELETE FROM user_has_course " +
-                        "WHERE user_id = ?;" +
-                        "DELETE from user_has_role where user_id=? ;"+
-                        "DELETE from user where id=?;"
-                        ,id,id,id);
+        jdbcTemplate.update("DELETE FROM user_has_course WHERE user_id=?", id);
+        jdbcTemplate.update("DELETE FROM user_has_role WHERE user_id=?",id);
+        return jdbcTemplate.update("DELETE FROM user WHERE id = ?",id);
+
     }
 }
 /**/

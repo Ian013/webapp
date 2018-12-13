@@ -1,16 +1,6 @@
 $(document).ready(function () {
     $("#registerForm").validate({
         rules:{
-            firstName:{
-                required:true,
-                minlenght:1,
-                maxlenght:15
-            },
-            lastName:{
-                required:true,
-                minlenght:1,
-                maxlenght:15
-            },
             username:{
                 required:true,
                 email:true,
