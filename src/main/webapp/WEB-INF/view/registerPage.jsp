@@ -34,32 +34,32 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="firstName" >FirstName</form:label>
-                                    <form:input path="firstName" class="form-control input-sm"/>
+                                    <form:input required="required" path="firstName" class="form-control input-sm"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="lastName" >lastName</form:label>
-                                    <form:input path="lastName" class="form-control input-sm"/>
+                                    <form:input required="required"  path="lastName" class="form-control input-sm"/>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <form:label path="email" >email</form:label>
-                            <form:input type="email" path="email" class="form-control input-sm"/>
+                            <form:input required="required" type="email" path="email" class="form-control input-sm"/>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="password">Password</form:label>
-                                    <form:input type ="password" path="password" class="form-control input-sm"/>
+                                    <form:input required="required" type ="password" path="password" class="form-control input-sm"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label>Confirm</label>
-                                    <input type="password" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                    <input required="required" type="password" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                                 </div>
                             </div>
                         </div>

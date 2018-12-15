@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.Valid;
 
 @Controller
-public class LoginController {
+public class SecurityController {
 
     private final UserService userService;
     private final RoleService roleService;
 
     @Autowired
-    public LoginController(UserService userService, RoleService roleService) {
+    public SecurityController(UserService userService, RoleService roleService) {
         this.userService = userService;
         this.roleService = roleService;
     }

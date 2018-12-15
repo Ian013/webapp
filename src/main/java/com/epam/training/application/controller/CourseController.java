@@ -4,6 +4,7 @@ import com.epam.training.application.domain.Course;
 import com.epam.training.application.domain.User;
 import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
-import java.util.List;
-
 @Controller
 public class CourseController {
+
+
+    private final static Logger LOG = Logger.getLogger(StudentController.class);
 
     private final CourseService courseService;
     private final UserService userService;
@@ -29,22 +31,7 @@ public class CourseController {
         this.userService = userService;
     }
 
-
-    @RequestMapping(value = "/courses",method = RequestMethod.GET)
-    public String getCoursesForStudent(Model model, Authentication auth){
-        List<Course> courses = courseService.getAll();
-        if(auth.isAuthenticated()) {
-            User user = userService.getUserByEmail(auth.getName());
-            if(courseService.getCoursesForStudent(user.getId())!=null){
-                model.addAttribute("myCourses", courseService.getCoursesForStudent(user.getId()));
-            }
-        }
-        model.addAttribute("courses", courses);
-        model.addAttribute("teachers",userService.getAllTeachers());
-        return "courses";
-    }
-
-    @RequestMapping(value="/courses", method = RequestMethod.POST)
+    @RequestMapping(value="/addNewCourse", method = RequestMethod.POST)
     public String addNewCourse(@RequestParam(value = "title")@NotNull  String title,
                                @RequestParam(value = "startDate")@NotNull Date start,
                                @RequestParam(value = "endDate")@NotNull Date endDate,
@@ -52,22 +39,28 @@ public class CourseController {
 
         Course course = new Course(title,start, endDate,userService.getById(teacherId));
         courseService.saveOrUpdate(course);
-        return "redirect:/courses";
+        LOG.debug("new course is added: \n ".concat(course.toString()));
+        return "redirect:/";
     }
 
     @RequestMapping(value="deleteCourse/{id}", method=RequestMethod.GET)
     public String deleteCourse(@PathVariable Integer id) {
         courseService.remove(id);
-        return "redirect:/courses";
+        LOG.debug(String.format("course num %d is removed successfully", id));
+        return "redirect:/";
     }
     @RequestMapping(value="deleteMyCourse/{id}")
-    public String deleteCourseForStudent(@PathVariable int id,Authentication auth){
+    public String deleteCourseForStudent(@PathVariable int id,
+                                         Authentication auth){
         User user = userService.getUserByEmail(auth.getName());
         userService.removeCourseForUser(user.getId(),id);
+        LOG.debug(String.format("course num %d is removed for user %d (%s)",id, user.getId(),user.getEmail()));
         return "redirect:/";
     }
     @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
-    public  String addCourseForStudent(@PathVariable Integer id, Authentication auth,Model model){
+    public  String addCourseForStudent(@PathVariable Integer id,
+                                       Authentication auth,
+                                       Model model){
         User user = userService.getUserByEmail(auth.getName());
         if(courseService.getCoursesForStudent(user.getId())
                 .stream()
@@ -78,12 +71,5 @@ public class CourseController {
             userService.addCourse(user.getId(), id);
             return "redirect:/";
         }
-    }
-    @RequestMapping(value = "showCoursesForStudent",method = RequestMethod.GET)
-    public String showCoursesForStudent(Authentication auth,Model model){
-        User user = userService.getUserByEmail(auth.getName());
-        model.addAttribute("coursesForStudent",
-                courseService.getCoursesForStudent(user.getId()));
-        return "index";
     }
 }

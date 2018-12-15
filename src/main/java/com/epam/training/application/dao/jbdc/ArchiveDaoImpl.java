@@ -25,7 +25,12 @@ public class ArchiveDaoImpl implements ArchiveDao {
 
     @Override
     public Integer saveOrUpdate(Archive archive) {
-       String sql = "INSERT INTO archive(note,student_id, course_id) values (?, ?,?)";
+        String sql;
+       if(archive.getUser().getId()>0&&archive.getCourse().getId()>0){
+           sql="update archive set note=? where student_id=? and course_id=?";
+       }else {
+           sql = "INSERT INTO archive(note,student_id, course_id) values (?, ?,?)";
+       }
        return jdbcTemplate.update((connection) -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, archive.getNote());
@@ -44,7 +49,7 @@ public class ArchiveDaoImpl implements ArchiveDao {
                         "JOIN course c2 on archive.course_id = c2.id " +
                         "JOIN user s on archive.student_id = s.id " +
                         "JOIN user t on c2.teacher_id = t.id" +
-                        " WHERE archive.id =?",
+                        " WHERE student_id =?",
                 new ArchiveRowMapper(),id);
     }
     @Override
@@ -67,9 +72,9 @@ public class ArchiveDaoImpl implements ArchiveDao {
 
     @Override
     public int getMarkForStudent(int courseId, int studentId) {
-        jdbcTemplate.queryForObject("SELECT * FROM archive WHERE archive.course_id=?" +
+        Archive a=jdbcTemplate.queryForObject("SELECT * FROM archive WHERE archive.course_id=?" +
                 " and archive.student_id=? ",new ArchiveRowMapper(),courseId,studentId);
-        return 0;
+        return a.getNote();
     }
 
 

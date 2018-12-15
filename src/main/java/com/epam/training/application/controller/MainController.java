@@ -30,7 +30,7 @@ public class MainController {
 
     @RequestMapping(value = "/403",method = RequestMethod.GET)
     public String errorMapping()    {
-        return "403";
+        return "error";
     }
 
     @RequestMapping(value = "/")
@@ -46,16 +46,30 @@ public class MainController {
                 if(auth.getAuthorities()
                         .stream()
                         .anyMatch((a)-> a.toString().equals("teacher"))){
+
                     List<Course> coursesForTeacher = courseService.getCoursesForTeacher(id);
-                    coursesForTeacher.forEach((c)->c.setUsers(userService.getStudentsFromCourse(c.getId())));
+
+                    coursesForTeacher.forEach((c)->
+                            c.setUsers(userService.getStudentsFromCourse(c.getId())));
+
                     model.addAttribute("coursesForTeacher",
                             coursesForTeacher);
                 }
                 if(auth.getAuthorities()
                         .stream()
                         .anyMatch((a)-> a.toString().equals("student"))){
-                model.addAttribute("coursesForStudent",
+
+                    model.addAttribute("coursesForStudent",
                             courseService.getCoursesForStudent(id));
+                }
+                if(auth.getAuthorities()
+                        .stream()
+                        .anyMatch((a)-> a.toString().equals("admin"))){
+                    List<Course> adminCourses = courseService.getAll();
+                    adminCourses.forEach((c)->
+                            c.setUsers(userService.getStudentsFromCourse(c.getId())));
+                    model.addAttribute("courses",adminCourses);
+                    model.addAttribute("teachers",userService.getAllTeachers());
                 }
             }
         }catch (NullPointerException e){

@@ -1,8 +1,8 @@
 package com.epam.training.application.test;
 
 
-import com.epam.training.application.configuration.RootConfig;
 import com.epam.training.application.configuration.TestContext;
+import com.epam.training.application.configuration.WebConfiguration;
 import com.epam.training.application.domain.Course;
 import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.UserService;
@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = {TestContext.class, RootConfig.class})
+@ContextConfiguration(classes = {TestContext.class, WebConfiguration.class})
 public class ControllerTest {
 
     private final static Logger LOG = Logger.getLogger(ControllerTest.class);
@@ -64,7 +64,7 @@ public class ControllerTest {
 
     }
     @Test
-    public void testIndexPageServicesAndView(){
+    public void testIndexPageParams(){
         Course  java = new Course();
                 java.setId(1);
                 java.setName("Java");

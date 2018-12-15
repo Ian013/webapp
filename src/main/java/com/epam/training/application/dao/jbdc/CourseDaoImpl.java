@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.List;
 
 @Transactional
@@ -23,16 +22,20 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public Integer saveOrUpdate(Course course) {
-        String sql = "INSERT INTO course(name, teacher_id, startDate, endDate) values (?, ?,?,?)";
+        String sql;
+        if (course.getId() > 0) {
+            sql = "UPDATE course set name=?,teacher_id=?,startDate=?,endDate=?";
+        } else {
+            sql = "INSERT INTO course(name, teacher_id, startDate, endDate) values (?, ?,?,?)";
+        }
         return jdbcTemplate.update((connection) -> {
-            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, course.getName());
             ps.setInt(2, course.getTeacher().getId());
-            ps.setObject(3,course.getStartDate());
-            ps.setObject(4,course.getEndDate());
+            ps.setObject(3, course.getStartDate());
+            ps.setObject(4, course.getEndDate());
             return ps;
-        });
-
+            });
     }
 
     @Override

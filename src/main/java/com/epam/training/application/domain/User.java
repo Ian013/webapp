@@ -1,7 +1,9 @@
 package com.epam.training.application.domain;
 
 
+import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 
 public class User {
@@ -13,7 +15,9 @@ public class User {
     private String email;
     private String password;
     private List<Role> roles;
-
+    private Date registerDate;
+    private boolean enabled;
+    private Map<Integer,Integer> marks;
 
     public User() {
     }
@@ -74,6 +78,27 @@ public class User {
     }
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Map<Integer, Integer> getMarks() {
+        return marks;
+    }
+    public void setMarks(Map<Integer, Integer> marks) {
+        this.marks = marks;
     }
 
     @Override

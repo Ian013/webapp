@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.List;
 
 @Transactional
@@ -26,9 +25,14 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Integer saveOrUpdate(User user) {
-        String sql = "INSERT INTO user(firstName, lastName, registerDate, email, password, enabled) values (?,?, ?,?,?,?);";
+        String sql;
+        if(user.getId()>0){
+            sql ="UPDATE user SET firstName=?,lastName=?,registerDate=?,email=?,password=?,enabled=? WHERE user.id=?";
+        } else{
+         sql = "INSERT INTO user(firstName, lastName, registerDate, email, password, enabled) values (?,?, ?,?,?,?)";
+        }
       return  jdbcTemplate.update((connection) -> {
-            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, user.getFirstName());
             ps.setString(2, user.getLastName());
             ps.setObject(3,new Date(System.currentTimeMillis()));

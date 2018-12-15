@@ -1,28 +1,46 @@
 $(document).ready(function () {
-    $('#actualCoursesTable').hide();
-    $('#teacherCoursesTable').hide();
+    let actualCourses =$("#actualCoursesTable");
+    let teacherCourses =$('#teacherCoursesTable');
+    let allCourses=$('#allCoursesTable');
+    let studentCourses=$('#myCoursesTable');
+    let students = $('#allStudentsTable');
+
+   actualCourses.hide();
+   teacherCourses.hide();
+   students.hide();
+
+    $('#showAllCourses').click(function () {
+        allCourses.show(500);
+        actualCourses.hide(500);
+        teacherCourses.hide(1000);
+        studentCourses.hide(1000);
+    });
     $('#actualCourses').click(function () {
-        $('#actualCoursesTable').toggle(1000);
-        $('#allCoursesTable').hide(1000);
-        $('#teacherCoursesTable').hide(1000);
-        $('#myCoursesTable').hide(1000);
+        actualCourses.toggle(500);
+        allCourses.hide(500);
+        //teacherCourses.hide(1000);
+        //studentCourses.hide(1000);
     });
     $("#showMyCourses").click(function(){
-        $('#myCoursesTable').toggle(1000);
-        $('#allCoursesTable').hide(1000);
-        $('#actualCoursesTable').hide(1000);
-        $('#teacherCoursesTable').hide(1000);
+        studentCourses.toggle(500);
+        //allCourses.hide(1000);
+        //actualCourses.hide(1000);
+        //teacherCourses.hide(1000);
     });
     $("#coursesForTeacher").click(function(){
-        $('#teacherCoursesTable').toggle(1000);
-        $('#allCoursesTable').hide(1000);
-        $('#actualCoursesTable').hide(1000);
-        $('#myCoursesTable').hide(1000);
+        teacherCourses.toggle(500);
+        studentCourses.hide(500);
+        //allCourses.hide(1000);
+        //actualCourses.hide(1000);
     });
     $('#allCourses').click(function () {
-        $('#allCoursesTable').toggle(1000);
-        $('#teacherCoursesTable').hide(1000);
-        $('#actualCoursesTable').hide(1000);
-        $('#myCoursesTable').hide(1000);
+        allCourses.toggle(500);
+        //teacherCourses.hide(1000);
+        actualCourses.hide(500);
+        //studentCourses.hide(1000);
     })
+    $('#allStudents').click(function () {
+        students.toggle(500);
+    });
+
 });

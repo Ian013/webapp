@@ -81,8 +81,7 @@ public class Course {
                 Objects.equals(name, course.name) &&
                 Objects.equals(startDate, course.startDate) &&
                 Objects.equals(endDate, course.endDate) &&
-                Objects.equals(teacher, course.teacher) &&
-                Objects.equals(users, course.users);
+                Objects.equals(teacher, course.teacher);
     }
 
     @Override
