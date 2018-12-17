@@ -14,10 +14,8 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-
     private final static Logger LOG = Logger.getLogger(UserServiceImpl.class);
     private final UserDao userDao;
-
 
     @Autowired
     public UserServiceImpl(UserDao userDao) {
@@ -86,6 +84,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+
         return null;
     }
 }

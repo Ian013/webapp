@@ -35,9 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                    .antMatchers("/courses","/addCourse/*")
+                    .antMatchers("/addCourse/*")
                     .access("hasAuthority('student')")
-                .antMatchers("/delete/**","/addCourse/**","/users/**")
+                .antMatchers("/delete/**","/addNewCourse/**","/deleteCourse/**")
                     .hasAuthority("admin")
                     .anyRequest()
                     .permitAll()
@@ -59,8 +59,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                     .csrf().disable();
     }
-
-
     private final DataSource ds;
 
     @Autowired

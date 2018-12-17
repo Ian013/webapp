@@ -1,35 +1,23 @@
 package com.epam.training.application.domain;
 
+import java.sql.Date;
+
 public class Archive {
 
     private int id;
     private int note;
-    private User user;
-    private Course course;
+    private int studentId;
+    private int courseId;
 
-    public Archive(){}
+    private Date date;
 
-    public Archive(int id, int note, User user, Course course) {
-        this.id =id;
-        this.user = user;
-        this.course = course;
-        this.note = note;
+    public Archive(int id,int note,int studentId,int courseId,Date date){
+        this.id = id;
+        this.note=note;
+        this.studentId=studentId;
+        this.courseId=courseId;
+        this.date = date;
     }
-
-    public Course getCourse() {
-        return course;
-    }
-    public void setCourse(Course course) {
-        this.course = course;
-    }
-
-    public User getUser() {
-        return user;
-    }
-    public void setUser(User user) {
-        this.user = user;
-    }
-
 
     public int getNote() {
         return note;
@@ -45,4 +33,35 @@ public class Archive {
         this.id = id;
     }
 
+    public Date getDate() {
+        return date;
+    }
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    @Override
+    public String toString() {
+        return "Archive{" +
+                "id=" + id +
+                ", note=" + note +
+                ", studentId=" + studentId +
+                ", courseId=" + courseId +
+                ", date=" + date +
+                '}';
+    }
 }

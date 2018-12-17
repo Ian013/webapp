@@ -35,20 +35,22 @@ public class CourseController {
     public String addNewCourse(@RequestParam(value = "title")@NotNull  String title,
                                @RequestParam(value = "startDate")@NotNull Date start,
                                @RequestParam(value = "endDate")@NotNull Date endDate,
-                               @RequestParam(value = "teacher")@NotNull  int teacherId){
-
+                               @RequestParam(value = "teacher")@NotNull  int teacherId,
+                               @RequestParam(value = "courseName",required = false) Integer id){
         Course course = new Course(title,start, endDate,userService.getById(teacherId));
+        if(id!=null){course.setId(id);}
         courseService.saveOrUpdate(course);
         LOG.debug("new course is added: \n ".concat(course.toString()));
         return "redirect:/";
     }
 
     @RequestMapping(value="deleteCourse/{id}", method=RequestMethod.GET)
-    public String deleteCourse(@PathVariable Integer id) {
+    public String deleteCourse(@PathVariable int id) {
         courseService.remove(id);
         LOG.debug(String.format("course num %d is removed successfully", id));
         return "redirect:/";
     }
+
     @RequestMapping(value="deleteMyCourse/{id}")
     public String deleteCourseForStudent(@PathVariable int id,
                                          Authentication auth){
@@ -57,6 +59,7 @@ public class CourseController {
         LOG.debug(String.format("course num %d is removed for user %d (%s)",id, user.getId(),user.getEmail()));
         return "redirect:/";
     }
+
     @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
     public  String addCourseForStudent(@PathVariable Integer id,
                                        Authentication auth,

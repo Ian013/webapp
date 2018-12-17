@@ -24,7 +24,7 @@ public class CourseDaoImpl implements CourseDao {
     public Integer saveOrUpdate(Course course) {
         String sql;
         if (course.getId() > 0) {
-            sql = "UPDATE course set name=?,teacher_id=?,startDate=?,endDate=?";
+            sql = "UPDATE course set name=?,teacher_id=?,startDate=?,endDate=? WHERE id=?";
         } else {
             sql = "INSERT INTO course(name, teacher_id, startDate, endDate) values (?, ?,?,?)";
         }
@@ -34,25 +34,31 @@ public class CourseDaoImpl implements CourseDao {
             ps.setInt(2, course.getTeacher().getId());
             ps.setObject(3, course.getStartDate());
             ps.setObject(4, course.getEndDate());
+            if(course.getId()>0){
+                ps.setInt(5,course.getId());
+            }
             return ps;
             });
     }
 
     @Override
     public Integer remove(int id) {
+        jdbcTemplate.update("DELETE FROM archive where course_id=?",id);
         jdbcTemplate.update(" DELETE FROM user_has_course where course_id=?",id);
-
         return jdbcTemplate.update("DELETE FROM course WHERE course.id= ?;",id);
-      //  return holder.getKey().intValue();
+
     }
 
     @Override
     public Course getById(int id) {
-        return jdbcTemplate.queryForObject(
-                "SELECT course.id,course.name,startDate,endDate,teacher_id,t.id,t.firstName,t.lastName " +
-                        "FROM course JOIN user t WHERE course.id = ? AND course.teacher_id=t.id"
-                ,new CourseRowMapper(),id);
-    }
+
+            return jdbcTemplate.queryForObject(
+                    "SELECT course.id,course.name,startDate,endDate,teacher_id,t.id,t.firstName,t.lastName " +
+                            "FROM course JOIN user t WHERE course.id = ? AND course.teacher_id=t.id"
+                    , new CourseRowMapper(), id);
+
+        }
+
 
     @Override
     public List<Course> getAll() {

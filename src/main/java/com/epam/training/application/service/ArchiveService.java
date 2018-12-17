@@ -7,5 +7,5 @@ import java.util.List;
 public interface ArchiveService extends BasicService<Archive> {
     Integer setMarkForStudent(int courseId,int studentId,int mark);
     List<Archive> getArchiveNotesForStudent(int studentId);
-//int getMarkF
+    List<Integer> getMarksForStudent(int courseId, int studentId);
 }

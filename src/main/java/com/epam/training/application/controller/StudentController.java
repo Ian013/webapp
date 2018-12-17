@@ -54,6 +54,13 @@ public class StudentController {
         LOG.debug(String.format("user with id %d successful removed", id));
         return "redirect:/";
     }
+    @RequestMapping(value="deleteStudentFromCourse/{studentId}+{courseId}", method = RequestMethod.GET)
+    public String deleteCourseForStudent(@PathVariable int studentId,
+                                         @PathVariable int courseId){
+        userService.removeCourseForUser(studentId,courseId);
+        LOG.debug(String.format("course num %d is removed for user num %d ",courseId, studentId));
+        return "redirect:/";
+    }
 
     @RequestMapping(value = "/markStudent",method = RequestMethod.POST)
     public String markStudent(@RequestParam(value = "mark")@NotNull int mark,

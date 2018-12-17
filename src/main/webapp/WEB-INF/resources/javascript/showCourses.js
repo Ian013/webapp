@@ -5,8 +5,7 @@ $(document).ready(function () {
     let studentCourses=$('#myCoursesTable');
     let students = $('#allStudentsTable');
 
-   actualCourses.hide();
-   teacherCourses.hide();
+   allCourses.hide();
    students.hide();
 
     $('#showAllCourses').click(function () {
@@ -38,7 +37,7 @@ $(document).ready(function () {
         //teacherCourses.hide(1000);
         actualCourses.hide(500);
         //studentCourses.hide(1000);
-    })
+    });
     $('#allStudents').click(function () {
         students.toggle(500);
     });

@@ -3,7 +3,6 @@ package com.epam.training.application.domain;
 
 import java.sql.Date;
 import java.util.List;
-import java.util.Map;
 
 
 public class User {
@@ -17,7 +16,7 @@ public class User {
     private List<Role> roles;
     private Date registerDate;
     private boolean enabled;
-    private Map<Integer,Integer> marks;
+    private List<Archive> marks;
 
     public User() {
     }
@@ -94,10 +93,11 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Map<Integer, Integer> getMarks() {
+
+    public List<Archive> getMarks() {
         return marks;
     }
-    public void setMarks(Map<Integer, Integer> marks) {
+    public void setMarks(List<Archive> marks) {
         this.marks = marks;
     }
 

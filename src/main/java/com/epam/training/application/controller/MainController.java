@@ -2,6 +2,7 @@ package com.epam.training.application.controller;
 
 import com.epam.training.application.domain.Course;
 import com.epam.training.application.domain.User;
+import com.epam.training.application.service.ArchiveService;
 import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.UserService;
 import org.apache.log4j.Logger;
@@ -19,13 +20,20 @@ import java.util.List;
 public class MainController {
 
     private final static Logger LOG =Logger.getLogger(MainController.class);
+
     private final CourseService courseService;
     private final UserService userService;
+    private final ArchiveService archiveService;
 
     @Autowired
-    public MainController(CourseService courseService, UserService userService) {
+    public MainController(CourseService courseService, UserService userService, ArchiveService archiveService) {
         this.courseService = courseService;
         this.userService = userService;
+        this.archiveService = archiveService;
+    }
+    @RequestMapping(value = "/*",method = RequestMethod.GET)
+    public String handle() {
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/403",method = RequestMethod.GET)
@@ -37,12 +45,12 @@ public class MainController {
     public String index(Model model, Authentication auth){
         model.addAttribute("courses",courseService.getAll());
         model.addAttribute("currentDate",new Date(System.currentTimeMillis()));
-        try {
+
             if (auth!=null) {
-                model.addAttribute("auth",
-                    auth.isAuthenticated());
                 User user = userService.getUserByEmail(auth.getName());
                 int id = user.getId();
+
+                //Loads data if user is a teacher
                 if(auth.getAuthorities()
                         .stream()
                         .anyMatch((a)-> a.toString().equals("teacher"))){
@@ -55,27 +63,32 @@ public class MainController {
                     model.addAttribute("coursesForTeacher",
                             coursesForTeacher);
                 }
+                //Loads data if user is a student
                 if(auth.getAuthorities()
                         .stream()
                         .anyMatch((a)-> a.toString().equals("student"))){
 
+                    List<Course> studentCourses = courseService.getCoursesForStudent(id);
                     model.addAttribute("coursesForStudent",
-                            courseService.getCoursesForStudent(id));
+                            studentCourses);
+                    model.addAttribute("marks",archiveService.getArchiveNotesForStudent(user.getId()));
+                    LOG.debug(archiveService.getArchiveNotesForStudent(user.getId()));
                 }
+                //Same for admin
                 if(auth.getAuthorities()
                         .stream()
                         .anyMatch((a)-> a.toString().equals("admin"))){
+
                     List<Course> adminCourses = courseService.getAll();
+
                     adminCourses.forEach((c)->
                             c.setUsers(userService.getStudentsFromCourse(c.getId())));
+
                     model.addAttribute("courses",adminCourses);
                     model.addAttribute("teachers",userService.getAllTeachers());
+                    model.addAttribute("allMarks",archiveService.getAll());
                 }
             }
-        }catch (NullPointerException e){
-            LOG.error(e.getMessage()+"Null pointer");
-            return "index";
-        }
         return "index";
     }
 

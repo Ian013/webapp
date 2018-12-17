@@ -10,7 +10,7 @@ public interface ArchiveDao extends BasicDao<Archive> {
 
     Integer setMarkForStudent(int courseId,int studentId,int mark);
 
-    int getMarkForStudent(int courseId,int studentId);
+    List<Archive> getMarksForStudent(int courseId, int studentId);
 
     Integer remove(int archiveId);
 }

@@ -18,5 +18,6 @@ public class WebAppInitialiser extends AbstractAnnotationConfigDispatcherServlet
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+
 }
 

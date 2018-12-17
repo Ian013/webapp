@@ -12,24 +12,23 @@
     <script  src="http://dev.jquery.com/view/trunk/plugins/validate/jquery.validate.js"></script>
     <script src="${pageContext.request.contextPath}/js/loginPageScript.js"></script>
 </head>
-<body>
-
-
-
-<div class="container">
-    <div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Please sign up</h3>
-                    <div class = "error"><c:if test="${not empty error}">
-                        ${error}
-                    </c:if></div>
-                </div>
-                <div class="panel-body">
-                    <form:form method="POST"
-                     action="/register"
-                      modelAttribute="userForm" >
+    <body>
+        <div class="container">
+            <div class="row centered-form">
+                <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please sign up</h3>
+                                <div class = "error">
+                                    <c:if test="${not empty error}">
+                                        ${error}
+                                    </c:if>
+                                </div>
+                        </div>
+                        <div class="panel-body">
+                            <form:form method="POST"
+                                action="/register"
+                                modelAttribute="userForm" >
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
@@ -46,9 +45,8 @@
                         </div>
                         <div class="form-group">
                             <form:label path="email" >email</form:label>
-                            <form:input required="required" type="email" path="email" class="form-control input-sm"/>
+                            <form:input required="required" type="email" path="email" maxlength="45" class="form-control input-sm"/>
                         </div>
-
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
@@ -63,17 +61,14 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-info" type="button" name="showpassword" id="showpassword" value="Show Password">Show password</button>
-                        <input  type="submit" value="submit" id = "submit" class="btn btn-info btn-block" >
-
-                    </form:form>
+                            <button class="btn btn-info" type="button" name="showpassword" id="showpassword" value="Show Password">Show password</button>
+                            <input  type="submit" value="submit" id = "submit" class="btn btn-info btn-block" >
+                            </form:form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
-
-<%@include file="deprecated/footer.jsp" %>
+    </body>
+</html>
 

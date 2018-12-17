@@ -11,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/showCourses.js"></script>
-    <script src="${pageContext.request.contextPath}/js/ajax.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dropdownStyle.css">
     <style>
         .navbar {
@@ -31,8 +30,8 @@
 
 <div class="jumbotron">
     <div class="container text-center">
-        <h1 id="ajax">COURSES</h1>
-        <p>Sample text</p>
+        <h1>COURSES</h1>
+        <p>${pageContext.request.userPrincipal.name}</p>
     </div>
 </div>
 <c:if test="${not empty error}"><div class="error"><p>${error}</p></div></c:if>
@@ -77,22 +76,23 @@
         </div>
     </div>
 </nav>
+<div class="container">
 <sec:authorize access="hasAuthority('student')">
         <c:if test="${empty coursesForStudent}">
-        <p>You haven't chosen any course yet</p>
-    </c:if>
+            <p>You haven't chosen any course yet</p>
+        </c:if>
         <c:if test="${not empty coursesForStudent}">
             <div id ="myCoursesTable" class="container">
                 <h1>MyCourses</h1>
                 <table class="table table-hover">
                     <tr>
-                    <th>Title</th>
-                    <th>Start</th>
-                    <th>End</th>
-                    <th>Teacher</th>
-                    <th>Delete cours</th>
-                    <th>My marks</th>
-                </tr>
+                        <th>Title</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Teacher</th>
+                        <th>Delete course</th>
+                        <th>My marks</th>
+                    </tr>
                 <c:forEach var="course" items="${coursesForStudent}">
                     <tr id ="courseTable">
                         <td>${course.name}</td>
@@ -100,7 +100,11 @@
                         <td>${course.endDate}</td>
                         <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
                         <td><a href="/deleteMyCourse/${course.id}">Delete</a></td>
-                        <td></td>
+                        <td>
+                            <c:forEach items="${marks}" var="mark">
+                                <c:if test="${mark.courseId == course.id}">${mark.note}</c:if>
+                            </c:forEach>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>
@@ -121,11 +125,13 @@
                     <c:forEach var="student" items="${course.users}">
                         <tr>
                             <td>${student.firstName} ${student.lastName}</td>
-                            <td><a href="users/deleteStudent/${student.id}">Delete</a></td>
+                            <td>
+                                <a href="/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a>
+                            </td>
                             <td>
                                 <form method="post" action="markStudent">
-                                <label>Mark
-                                    <input type="number" name="mark"  required="required" min="0" max="10">
+                                    <label>Mark
+                                    <input type="number" name="mark" required="required" min="0" max="10">
                                 </label>
                                     <input type ="hidden" name="courseId" value="${course.id}">
                                     <input type="hidden" name="studentId" value="${student.id}">
@@ -145,6 +151,7 @@
         <h1>All courses</h1>
         <table class="table table-hover">
             <tr>
+                <th>Add</th>
                 <th>Title</th>
                 <th>Start</th>
                 <th>End</th>
@@ -152,12 +159,18 @@
             </tr>
         <c:forEach items="${courses}" var="course">
             <tr id ="courseTable">
-                <td><a href="/addCourse/${course.id}">${course.name} <c:if test="${course.startDate<currentDate}">(Already started)</a></c:if></td>
+                <td><a href="/addCourse/${course.id}">ADD</a></td>
+                <td>${course.name}
+                    <c:if test="${course.startDate<currentDate}">
+                        (Already started)
+                    </c:if>
+                </td>
                 <td>${course.startDate}</td>
                 <td>${course.endDate}</td>
                 <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
                 <sec:authorize access="hasAuthority('admin')">
-                    <td><a href="/deleteCourse/${course.id}">Delete</a></td> </sec:authorize>
+                    <td><a href="/deleteCourse/${course.id}">Delete</a></td>
+                </sec:authorize>
             </tr>
         </c:forEach>
         </table>
@@ -165,39 +178,48 @@
                 <form action="${pageContext.request.contextPath}/addNewCourse" method="POST">
                     <label>Title</label>
                     <label>
-                        <input type="text" name="title">
+                        <input type="text" name="title" maxlength="30" required="required">
                     </label>
                     <label>Start</label>
                     <label>
-                        <input type="date" name="startDate">
+                        <input type="date" name="startDate" required="required">
                     </label>
                     <label>End</label>
                     <label>
-                        <input type="date" name="endDate">
+                        <input type="date" name="endDate" required="required">
                     </label>
-                    <label>Teacher</label>
-
                     <div class="dropdown">
-                        <button class="dropbtn">Teachers</button>
+                        <button class="dropbtn">Teacher</button>
                         <div class="dropdown-content">
                             <c:forEach var="teacher" items="${teachers}">
                                 <label>
-                                    <input type="radio"  name="teacher" value="${teacher.id}">
+                                    <input type="radio"  name="teacher" value="${teacher.id}" required="required">
                                         ${teacher.firstName} ${teacher.lastName}
                                 </label>
                             </c:forEach>
                         </div>
+                    </div><div class="dropdown">
+                    <button class="dropbtn">Course name(For editing)</button>
+                    <div class="dropdown-content">
+                        <c:forEach var="course" items="${courses}">
+                            <label>
+                                <input type="radio" name="courseName" value="${course.id}">
+                                    ${course.name}
+                            </label>
+                        </c:forEach>
                     </div>
+                </div>
                     <input type="submit" value="submit">
                 </form>
             </sec:authorize>
+        </div>
     </div>
-    </div>
-    <div class = "container" id="actualCoursesTable">
+<div class = "container" id="actualCoursesTable">
         <div class="row">
             <h1>Actual courses</h1>
             <table class="table table-hover">
                 <tr>
+                    <td>Add</td>
                     <th>Title</th>
                     <th>Start</th>
                     <th>End</th>
@@ -205,12 +227,13 @@
                 </tr>
                 <c:forEach items="${courses}" var="course">
                     <c:if test="${course.startDate>currentDate}">
-                    <tr id ="courseTable">
-                        <td><a href="/addCourse/${course.id}">${course.name}</a></td>
-                        <td>${course.startDate}</td>
-                        <td>${course.endDate}</td>
-                        <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
-                    </tr>
+                        <tr id ="courseTable">
+                            <td><a href="/addCourse/${course.id}">ADD</a></td>
+                            <td>${course.name}</td>
+                            <td>${course.startDate}</td>
+                            <td>${course.endDate}</td>
+                            <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
+                        </tr>
                     </c:if>
                 </c:forEach>
             </table>
@@ -218,6 +241,7 @@
     </div>
 <sec:authorize access="hasAuthority('admin')">
     <div class="container" id="allStudentsTable">
+        <table>
         <c:forEach var="course" items="${courses}">
         <table class="table table-hover">
             <tr>
@@ -227,18 +251,25 @@
             <c:forEach var="student" items="${course.users}">
                 <tr>
                     <td>${student.firstName} ${student.lastName}</td>
-
+                    <td><a href="/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a></td>
                     <td><a href="users/deleteStudent/${student.id}">Delete</a></td>
-                    <td>{student.marks}</td>
+                    <td>
+                        <c:forEach var="mark" items="${allMarks}">
+                                <c:if test="${student.id==mark.studentId and course.id==mark.courseId}">
+                                    ${mark.note}
+                                </c:if>
+                        </c:forEach>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
         </c:forEach>
+</table>
     </div>
 </sec:authorize>
 <br>
 <br>
-
+</div>
 <footer class="container-fluid text-center">
     <p>Footer</p>
 </footer>
