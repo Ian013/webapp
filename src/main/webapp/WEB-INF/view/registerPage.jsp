@@ -11,6 +11,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script  src="http://dev.jquery.com/view/trunk/plugins/validate/jquery.validate.js"></script>
     <script src="${pageContext.request.contextPath}/js/loginPageScript.js"></script>
+    <script src="${pageContext.request.contextPath}/js/registerValidation.js"></script>
 </head>
     <body>
         <div class="container">
@@ -28,36 +29,36 @@
                         <div class="panel-body">
                             <form:form method="POST"
                                 action="/register"
-                                modelAttribute="userForm" >
+                                modelAttribute="userForm" id="registerForm" onsubmit="return validate();" >
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="firstName" >FirstName</form:label>
-                                    <form:input required="required" path="firstName" class="form-control input-sm"/>
+                                    <form:input required="required" id="firstName" path="firstName" class="form-control input-sm"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="lastName" >lastName</form:label>
-                                    <form:input required="required"  path="lastName" class="form-control input-sm"/>
+                                    <form:input required="required" id="lastName"  path="lastName" class="form-control input-sm"/>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <form:label path="email" >email</form:label>
-                            <form:input required="required" type="email" path="email" maxlength="45" class="form-control input-sm"/>
+                            <form:input required="required" type="email" id="email" path="email" maxlength="45" class="form-control input-sm"/>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:label path="password">Password</form:label>
-                                    <form:input required="required" type ="password" path="password" class="form-control input-sm"/>
+                                    <form:input required="required" id="password" type ="password" path="password" class="form-control input-sm"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label>Confirm</label>
-                                    <input required="required" type="password" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                    <input required="required" name="confirm" type="password" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                                 </div>
                             </div>
                         </div>

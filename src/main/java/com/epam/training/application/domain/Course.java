@@ -80,8 +80,7 @@ public class Course {
         return id == course.id &&
                 Objects.equals(name, course.name) &&
                 Objects.equals(startDate, course.startDate) &&
-                Objects.equals(endDate, course.endDate) &&
-                Objects.equals(teacher, course.teacher);
+                Objects.equals(endDate, course.endDate) ;
     }
 
     @Override

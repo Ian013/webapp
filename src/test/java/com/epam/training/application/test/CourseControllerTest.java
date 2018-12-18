@@ -29,9 +29,9 @@ public class CourseControllerTest extends BasicTest {
                         .param("teacher", course.getTeacher().toString())
                         .param("courseId"))
                     .andDo(print())
-                        .andExpect(status().isOk())
-                        .andExpect(view().name("forward:/"))
-                        .andExpect(forwardedUrl("/"));
+                        .andExpect(status().is3xxRedirection())
+                        .andExpect(view().name("redirect:/"))
+                        .andExpect(redirectedUrl("/"));
 
             verify(courseServiceMock,times(1)).saveOrUpdate(course);
             verify(userServiceMock,times(1)).getById(0);
@@ -49,9 +49,9 @@ public class CourseControllerTest extends BasicTest {
         try {
             mockMvc.perform(get("/deleteCourse/{id}",id))
                     .andDo(print())
-                    .andExpect(status().isOk())
-                    .andExpect(view().name("forward:/"))
-                    .andExpect(forwardedUrl("/"));
+                    .andExpect(status().is3xxRedirection())
+                    .andExpect(view().name("redirect:/"))
+                    .andExpect(redirectedUrl("/"));
             verify(courseServiceMock,times(1)).remove(id);
             verifyNoMoreInteractions(courseServiceMock);
 
@@ -73,9 +73,9 @@ public class CourseControllerTest extends BasicTest {
         try {
             mockMvc.perform(get("/deleteMyCourse/{id}",courseId))
                     .andDo(print())
-                    .andExpect(status().isOk())
-                    .andExpect(view().name("forward:/"))
-                    .andExpect(forwardedUrl("/"));
+                    .andExpect(status().is3xxRedirection())
+                    .andExpect(view().name("redirect:/"))
+                    .andExpect(redirectedUrl("/"));
 
             verify(userServiceMock,times(1)).getUserByEmail(student.getEmail());
             verify(userServiceMock,times(1)).removeCourseForUser(student.getId(),courseId);
@@ -102,7 +102,7 @@ public class CourseControllerTest extends BasicTest {
         try {
             mockMvc.perform(get("/addCourse/{id}",course.getId()))
                     .andDo(print())
-                    .andExpect(status().isOk())
+                    .andExpect(status().is3xxRedirection())
                     .andExpect(view().name("forward:/"))
                     .andExpect(forwardedUrl("/"));
 

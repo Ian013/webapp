@@ -7,10 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56def025-383c-4d9d-abbf-c9fe4ec4cffd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webapp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/courseValidation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/registerValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/43756244-5677-4516-b4c0-819a7bae506b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/43756244-5677-4516-b4c0-819a7bae506b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java" afterDir="false" />
@@ -20,128 +21,21 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Archive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Archive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/ArchiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/ArchiveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/ArchiveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/ArchiveServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/databaseScript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysqlScripts/createDatabaseIfNotExist.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/errorPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dataSource.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dataSource.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mysqlScripts/createDatabaseIfNotExist.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysql/createDatabaseIfNotExist.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/configuration/TestContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/configuration/TestContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/webapp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/Runner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/configuration/ContextConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/configuration/ContextConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/configuration/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/configuration/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/dao/jbdc/mapper/ArchiveRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/dao/jbdc/mapper/ArchiveRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/domain/Archive.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/domain/Archive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/service/ArchiveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/service/ArchiveService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/service/impl/ArchiveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/service/impl/ArchiveServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/Runner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/configuration/ContextConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/configuration/LoginSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/configuration/RootConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/configuration/SecurityInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/configuration/WebAppInitialiser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/configuration/WebConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/controller/CourseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/controller/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/ArchiveDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/BasicDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/CourseDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/TeacherDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/ArchiveDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/CourseDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/TeacherDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/mapper/ArchiveRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/mapper/CourseRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/mapper/TeacherRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/dao/jbdc/mapper/UserRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/domain/Archive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/domain/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/domain/Teacher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/ArchiveService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/BasicService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/CourseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/TeacherService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/impl/ArchiveServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/impl/CourseServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/impl/TeacherServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/com/epam/training/application/service/impl/UserServiceImpl1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/hibernate-validator-6.0.13.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jackson-datatype-jdk8-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jackson-datatype-jsr310-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jackson-module-parameter-names-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jquery-2.2.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/log4j-api-2.11.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/log4j-to-slf4j-2.11.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/logback-classic-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/logback-core-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/snakeyaml-1.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-json-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-tomcat-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-2.1.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-context-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-core-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-jcl-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-jdbc-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-security-config-5.1.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-security-core-5.1.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-security-web-5.1.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-web-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/tomcat-annotations-api-9.0.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-core-9.0.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-el-9.0.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-websocket-9.0.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/resources/javascript/getActualCourses.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/resources/javascript/loginPageScript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/resources/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/add-course.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/courses.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/error.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/loginPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/login_sucess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/registerPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/users.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-app-1.0-SNAPSHOT/WEB-INF/view/welcome.jsp" beforeDir="false" />
     </list>
     <list id="0a8655a1-3f57-425d-be01-5b464a8dd295" name="Revert &quot;Security implementation&quot;" comment="Revert &quot;Security implementation&quot;&#10;&#10;This reverts commit 91a91ddb" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -177,7 +71,7 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="faculty@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="faculty: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="faculty: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -186,34 +80,51 @@
     <option name="autoscrollToSource" value="true" />
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-834545685">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.100" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="134" />
+          <entry key="Properties" value="20" />
+          <entry key="XML" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Database Element" value="1" />
+          <entry key="JAVA" value="27" />
+          <entry key="JSP" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-              <folding>
-                <element signature="n#sec:authorize#2;n#jsp:root#0;n#!!top" />
-                <element signature="n#sec:authorize#3;n#jsp:root#0;n#!!top" />
-                <element signature="n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+            <state relative-caret-position="106">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#testLoginPageViewName#0;class#SecurityControllerTest#0" />
-                <element signature="method#testRegisterPageModelAttribute#0;class#SecurityControllerTest#0" />
-                <element signature="method#testRegisterPost#0;class#SecurityControllerTest#0" />
-                <element signature="method#testRegisterEmailAlreadyExist#0;class#SecurityControllerTest#0" />
+                <element signature="method#testIndexPageParams#0;class#IndexTest#0" />
               </folding>
             </state>
           </provider>
@@ -222,59 +133,78 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="89" column="41" lean-forward="true" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+            <state relative-caret-position="1734">
+              <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#testAddNewCourse#0;class#CourseControllerTest#0" />
-                <element signature="method#testDeleteCourse#0;class#CourseControllerTest#0" />
-                <element signature="method#testDeleteCourseForStudent#0;class#CourseControllerTest#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/configuration/TestContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+        <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="-66">
+              <caret line="140" column="33" lean-forward="true" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-32">
+              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1254#1255#0" expanded="true" />
-                <element signature="e#1327#1328#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="308">
+              <caret line="69" column="47" lean-forward="true" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#554#555#0" expanded="true" />
+                <element signature="method#testLoginPageViewName#0;class#SecurityControllerTest#0" />
+                <element signature="method#testRegisterPageModelAttribute#0;class#SecurityControllerTest#0" />
+                <element signature="method#testRegisterEmailAlreadyExist#0;class#SecurityControllerTest#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/SecurityConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+            <state relative-caret-position="68">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="63" column="75" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
+              <folding>
+                <element signature="e#1390#1391#0" expanded="true" />
+                <element signature="e#1425#1426#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -282,36 +212,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
+            <state relative-caret-position="136">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1305#1343#0" />
+                <element signature="method#addNewCourse#0;class#CourseController#0" />
                 <element signature="method#deleteCourse#0;class#CourseController#0" />
+                <element signature="method#addCourseForStudent#0;class#CourseController#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testIndexPageViewName#0;class#IndexTest#0" />
-                <element signature="method#testIndexPageParams#0;class#IndexTest#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -325,9 +233,9 @@
         <option value="HTML File" />
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -343,9 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/getActualCourses.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/getAllCourses.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/users.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/courses.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/loginValidation.js" />
@@ -353,55 +258,64 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/allStudents.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/ajax.js" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/dataSource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/RootConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/RoleDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/mapper/UserRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/ArchiveDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/ArchiveDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/mapper/ArchiveRowMapper.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/showCourses.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/databaseScript.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/CourseDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Archive.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/ArchiveService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/ArchiveServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/ControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/configuration/TestContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/registerValidation.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/courseValidation.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/dataSource.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -439,6 +353,12 @@
           <item name="web-app Maven Web Application" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
           <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="web-app Maven Web Application" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="tomcat7" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
       <select />
@@ -698,6 +618,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -753,6 +674,37 @@
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -792,7 +744,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -811,6 +762,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541228202506" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -831,15 +783,15 @@
       <recent name="com.epam.training.application.connector" />
       <recent name="com.epam.training.servlet.controller" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.epam.training.application.controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\1\IdeaProjects\webapp\src\main\resources\mysql" />
+      <recent name="C:\Users\1\IdeaProjects\webapp\src\main\resources" />
+      <recent name="C:\Users\1\IdeaProjects\webapp\src\main\webapp\mysql" />
       <recent name="C:\Users\1\IdeaProjects\webapp\src\main\resources\mysqlScripts" />
       <recent name="C:\Users\1\IdeaProjects\webapp\src\main\webapp\WEB-INF\view\deprecated" />
-      <recent name="C:\Users\1\IdeaProjects\webapp\src\main\webapp\WEB-INF\view" />
-      <recent name="C:\Users\1\IdeaProjects\webapp\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\1\IdeaProjects\webapp\src\main\webapp\WEB-INF\view\resources\" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.epam.training.application.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -854,7 +806,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CourseControllerTest and 3 more">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.12">
     <configuration name="CourseControllerTest and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
@@ -890,7 +842,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CourseControllerTest.testDeleteCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CourseControllerTest.testAddNewCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
         <pattern>
@@ -900,29 +852,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
       <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.CourseControllerTest" />
-      <option name="METHOD_NAME" value="testDeleteCourse" />
+      <option name="METHOD_NAME" value="testAddNewCourse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CourseControllerTest.testDeleteCourseForStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="webapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.training.application.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.CourseControllerTest" />
-      <option name="METHOD_NAME" value="testDeleteCourseForStudent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTest.testDeleteCourseForStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
         <pattern>
@@ -932,6 +868,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
       <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.UserControllerTest" />
+      <option name="METHOD_NAME" value="testDeleteCourseForStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testRemoveStudentFromCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.training.application.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.UserControllerTest" />
+      <option name="METHOD_NAME" value="testRemoveStudentFromCourse" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -958,11 +912,11 @@
         <option name="DEPLOY_TOMCAT_APPS" value="true" />
         <option name="PRESERVE_SESSIONS" value="true" />
       </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <log_file alias="Tomcat Localhost Access Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost_access_log.*" />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="61503" />
       </RunnerSettings>
@@ -1026,11 +980,11 @@
         <option name="BASE_DIRECTORY_NAME" value="_webapp" />
         <option name="DEPLOY_TOMCAT_APPS" value="true" />
       </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="61503" />
       </RunnerSettings>
@@ -1101,10 +1055,11 @@
             </list>
           </option>
           <option name="transportHostId" />
+          <host-id />
         </data>
       </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="61504" />
         <option name="LOCAL" value="false" />
@@ -1113,13 +1068,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Runner" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.12" />
+      <item itemvalue="JUnit.CourseControllerTest and 3 more" />
+      <item itemvalue="JUnit.UserControllerTest.testRemoveStudentFromCourse" />
+      <item itemvalue="JUnit.UserControllerTest.testDeleteCourseForStudent" />
+      <item itemvalue="JUnit.CourseControllerTest" />
+      <item itemvalue="JUnit.CourseControllerTest.testAddNewCourse" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CourseControllerTest and 3 more" />
-        <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.CourseControllerTest and 3 more" />
-        <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.CourseControllerTest and 3 more" />
+        <item itemvalue="JUnit.CourseControllerTest" />
+        <item itemvalue="JUnit.CourseControllerTest.testAddNewCourse" />
+        <item itemvalue="JUnit.UserControllerTest.testDeleteCourseForStudent" />
+        <item itemvalue="JUnit.UserControllerTest.testRemoveStudentFromCourse" />
       </list>
     </recent_temporary>
   </component>
@@ -1197,7 +1161,11 @@
       <workItem from="1544903665620" duration="1255000" />
       <workItem from="1544907104232" duration="6898000" />
       <workItem from="1544982495794" duration="50000" />
-      <workItem from="1544983771586" duration="37215000" />
+      <workItem from="1544983771586" duration="47391000" />
+      <workItem from="1545160618596" duration="892000" />
+      <workItem from="1545161699718" duration="552000" />
+      <workItem from="1545164478277" duration="2000" />
+      <workItem from="1545166010392" duration="8257000" />
     </task>
     <task id="LOCAL-00001" summary="Dao">
       <created>1542360767980</created>
@@ -1332,43 +1300,50 @@
       <option name="project" value="LOCAL" />
       <updated>1545022539408</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Tests, some minor fixes">
+      <created>1545148991420</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1545148991420</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CourseControllerTest_testDeleteCourseForStudent - 2018.12.18 at 18h 26m 31s.xml">
-      <configuration name="CourseControllerTest.testDeleteCourseForStudent" configurationId="JUnit" />
+    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 19h 17m 10s.xml">
+      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseControllerTest_testDeleteCourseForStudent - 2018.12.18 at 18h 27m 57s.xml">
-      <configuration name="CourseControllerTest.testDeleteCourseForStudent" configurationId="JUnit" />
+    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 21h 38m 26s.xml">
+      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseControllerTest - 2018.12.18 at 18h 40m 27s.xml">
+    <history-entry file="UserControllerTest_testRemoveStudentFromCourse - 2018.12.19 at 00h 31m 30s.xml">
+      <configuration name="UserControllerTest.testRemoveStudentFromCourse" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_testDeleteCourseForStudent - 2018.12.19 at 00h 37m 44s.xml">
+      <configuration name="UserControllerTest.testDeleteCourseForStudent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_testDeleteCourseForStudent - 2018.12.19 at 00h 39m 13s.xml">
+      <configuration name="UserControllerTest.testDeleteCourseForStudent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseControllerTest - 2018.12.19 at 01h 12m 59s.xml">
       <configuration name="CourseControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 18h 44m 52s.xml">
+    <history-entry file="CourseControllerTest - 2018.12.19 at 01h 14m 53s.xml">
+      <configuration name="CourseControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseControllerTest - 2018.12.19 at 01h 16m 39s.xml">
+      <configuration name="CourseControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseControllerTest_and_3_more - 2018.12.19 at 01h 17m 37s.xml">
       <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest - 2018.12.18 at 18h 46m 35s.xml">
-      <configuration name="UserControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 18h 48m 15s.xml">
-      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 18h 51m 54s.xml">
-      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserControllerTest - 2018.12.18 at 18h 54m 06s.xml">
-      <configuration name="UserControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 18h 55m 32s.xml">
-      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 19h 00m 51s.xml">
+    <history-entry file="CourseControllerTest_and_3_more - 2018.12.19 at 01h 18m 54s.xml">
       <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517101000" />
+    <option name="totallyTimeSpent" value="536980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1381,9 +1356,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.20801815" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.21709532" />
       <window_info id="Structure" order="1" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1393,7 +1367,48 @@
       <window_info id="Web" order="7" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.24386252" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.39836067" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50226927" side_tool="true" weight="0.39836067" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.2749591" />
+      <window_info anchor="bottom" id="Spring" order="15" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="17" weight="0.3289689" />
+      <window_info active="true" anchor="right" id="Maven Projects" visible="true" weight="0.1505295" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.15204236" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.18683812" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="JSF" order="9" weight="0.16111952" />
+      <window_info anchor="right" id="CDI" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32980332" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.20801815" />
+      <window_info id="Structure" order="1" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.24386252" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1412,16 +1427,16 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.15204236" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.15204236" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.18683812" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.18683812" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="JSF" order="9" weight="0.16111952" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32980332" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1461,23 +1476,11 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Dao" />
     <MESSAGE value="HIbernate attempt" />
@@ -1497,111 +1500,12 @@
     <MESSAGE value="View and conrollers major fixes, test" />
     <MESSAGE value="Dao and controller fixes, properties" />
     <MESSAGE value="Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+    <MESSAGE value="Tests, some minor fixes" />
+    <MESSAGE value="minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/allStudents.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/RoleDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="38" column="104" selection-start-line="38" selection-start-column="104" selection-end-line="38" selection-end-column="104" />
-          <folding>
-            <element signature="e#1623#1624#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/mapper/UserRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" selection-start-line="18" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user_has_course">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/CourseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/ArchiveDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="83" column="56" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/ArchiveDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/dataSource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/course">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/modalLogin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612" />
@@ -1611,20 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/showCourses.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1649,49 +1539,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-332">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/CourseDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="46" column="81" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="46" column="6" lean-forward="true" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-          <folding>
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mysqlScripts/createDatabaseIfNotExist.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mysql/createDatabaseIfNotExist.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1213">
           <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1699,13 +1550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1733,152 +1577,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        <state relative-caret-position="108">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="44" column="47" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
-          <folding>
-            <element signature="e#2100#2462#1" />
-            <element signature="e#3245#3694#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="99" selection-start-line="2" selection-start-column="99" selection-end-line="2" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding>
-            <element signature="method#loginPage#0;class#SecurityController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding>
-            <element signature="n#sec:authorize#2;n#jsp:root#0;n#!!top" />
-            <element signature="n#sec:authorize#3;n#jsp:root#0;n#!!top" />
-            <element signature="n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="51" column="87" selection-start-line="51" selection-start-column="87" selection-end-line="51" selection-end-column="87" />
-          <folding>
-            <element signature="method#deleteStudent#0;class#StudentController#0" />
-            <element signature="method#deleteCourseForStudentPOST#0;class#StudentController#0" />
-            <element signature="method#markStudent#0;class#StudentController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#testLoginPageViewName#0;class#SecurityControllerTest#0" />
-            <element signature="method#testRegisterPageModelAttribute#0;class#SecurityControllerTest#0" />
-            <element signature="method#testRegisterPost#0;class#SecurityControllerTest#0" />
-            <element signature="method#testRegisterEmailAlreadyExist#0;class#SecurityControllerTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#testIndexPageViewName#0;class#IndexTest#0" />
-            <element signature="method#testIndexPageParams#0;class#IndexTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1305#1343#0" />
-            <element signature="method#deleteCourse#0;class#CourseController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="89" column="41" lean-forward="true" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#testAddNewCourse#0;class#CourseControllerTest#0" />
-            <element signature="method#testDeleteCourse#0;class#CourseControllerTest#0" />
-            <element signature="method#testDeleteCourseForStudent#0;class#CourseControllerTest#0" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/configuration/TestContext.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user_has_role" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/registerValidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/showCourses.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/courseValidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user_has_course" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1259">
+          <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/CourseDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dataSource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="42" lean-forward="true" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1893,22 +1740,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java">
+    <entry file="file://$PROJECT_DIR$/.classpath">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="-459" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="method#addNewCourse#0;class#CourseController#0" />
+            <element signature="method#deleteCourse#0;class#CourseController#0" />
+            <element signature="method#addCourseForStudent#0;class#CourseController#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="-32">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="69" column="47" lean-forward="true" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testLoginPageViewName#0;class#SecurityControllerTest#0" />
+            <element signature="method#testRegisterPageModelAttribute#0;class#SecurityControllerTest#0" />
+            <element signature="method#testRegisterEmailAlreadyExist#0;class#SecurityControllerTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testIndexPageParams#0;class#IndexTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="140" column="33" lean-forward="true" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="63" column="75" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
+          <folding>
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

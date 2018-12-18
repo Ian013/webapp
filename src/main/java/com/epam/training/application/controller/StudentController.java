@@ -1,9 +1,11 @@
 package com.epam.training.application.controller;
 
+import com.epam.training.application.domain.User;
 import com.epam.training.application.service.ArchiveService;
 import com.epam.training.application.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,19 +28,28 @@ public class StudentController {
         this.archiveService = archiveService;
     }
 
-  @RequestMapping(value = "users/deleteStudent/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "users/deleteStudent/{id}",method = RequestMethod.GET)
     public String deleteStudent(@PathVariable int id){
         userService.remove(id);
         LOG.debug(String.format("user with id %d successful removed", id));
-        return "forward:/";
+        return "redirect:/";
     }
 
-    @RequestMapping(value="deleteStudentFromCourse", method = RequestMethod.POST)
-    public String deleteCourseForStudentPOST(@RequestParam(value = "studentId") int studentId,
-                                             @RequestParam(value = "courseId") int courseId){
+    @RequestMapping(value="deleteStudentFromCourse/{courseId}+{studentId}", method = RequestMethod.GET)
+    public String deleteCourseForStudentGET(@PathVariable(value = "studentId") int studentId,
+                                             @PathVariable(value = "courseId") int courseId){
         userService.removeCourseForUser(studentId,courseId);
         LOG.debug(String.format("course num %d is removed for user num %d ",courseId, studentId));
-        return "forward:/";
+        return "redirect:/";
+    }
+
+    @RequestMapping(value="deleteMyCourse/{id}")
+    public String deleteCourseForStudent(@PathVariable int id,
+                                         Authentication auth){
+        User user = userService.getUserByEmail(auth.getName());
+        userService.removeCourseForUser(user.getId(),id);
+        LOG.debug(String.format("course num %d is removed for user %d (%s)",id, user.getId(),user.getEmail()));
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/markStudent",method = RequestMethod.POST)
@@ -47,6 +58,8 @@ public class StudentController {
                               @RequestParam(value = "studentId")@NotNull int studentId){
         archiveService.setMarkForStudent(courseId,studentId,mark);
         LOG.debug(String.format("Mark %d is set for user %d , course %d",mark,studentId,courseId));
-        return "forward:/";
+        return "redirect:/";
     }
+
+
 }

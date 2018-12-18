@@ -14,6 +14,7 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Objects;
 
 
 @Configuration
@@ -32,19 +33,21 @@ public class ContextConfiguration {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource driver = new DriverManagerDataSource();
+		driver.setDriverClassName(Objects.requireNonNull(env.getProperty("ds.driverName")));
 		driver.setUrl(env.getProperty("ds.url"));
 		driver.setUsername(env.getProperty("ds.username"));
 		driver.setPassword(env.getProperty("ds.password"));
 
+		//createDatabaseIfNotExist(driver);
 
 		return driver;
 	}
 
 
-	public void createDatabaseIfNotExist(DataSource dataSource){
+	private void createDatabaseIfNotExist(DataSource dataSource){
 		ResourceDatabasePopulator rdp = new ResourceDatabasePopulator();
 		rdp.addScript(new ClassPathResource(
-				"/resources/mysqlScripts/createDatabaseIfNotExist.sql"));
+				"/mysql/createDatabaseIfNotExist.sql"));
 		try {
 			Connection connection = dataSource.getConnection();
 			rdp.populate(connection); // this starts the script execution, in the order as added

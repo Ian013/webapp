@@ -31,8 +31,6 @@ public abstract class BasicTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
-
-
     @Qualifier("userService")
     @Autowired
     protected UserService userServiceMock;

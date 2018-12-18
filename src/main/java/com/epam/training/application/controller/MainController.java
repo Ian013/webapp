@@ -47,8 +47,8 @@ public class MainController {
         model.addAttribute("currentDate",new Date(System.currentTimeMillis()));
             if (auth!=null) {
                 User user = userService.getUserByEmail(auth.getName());
+                model.addAttribute("currentUser",user);
                 int id = user.getId();
-
                 //Loads data if user is a teacher
                 if(auth.getAuthorities()
                         .stream()
@@ -61,6 +61,7 @@ public class MainController {
 
                     model.addAttribute("coursesForTeacher",
                             coursesForTeacher);
+                    model.addAttribute("allMarks",archiveService.getAll());
                 }
                 //Loads data if user is a student
                 if(auth.getAuthorities()

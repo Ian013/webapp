@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/showCourses.js"></script>
+    <script src="${pageContext.request.contextPath}/js/courseValidation.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dropdownStyle.css">
     <style>
         .navbar {
@@ -31,7 +32,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <h1>COURSES</h1>
-        <p>${pageContext.request.userPrincipal.name}</p>
+        <p>${currentUser.firstName} ${currentUser.lastName}</p>
     </div>
 </div>
 <c:if test="${not empty error}"><div class="error"><p>${error}</p></div></c:if>
@@ -58,20 +59,22 @@
                 </sec:authorize>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <c:if test="${pageContext.request.userPrincipal==null}">
+                <c:choose>
+                <c:when test="${pageContext.request.userPrincipal==null}">
                     <li><a href="loginPage"><span class="glyphicon glyphicon-user"></span> Log in</a></li>
                     <li><a href="registerPage"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                </c:if>
-                <c:if test="${pageContext.request.userPrincipal!=null}">
-                    <li><a href="#myCoursesTable" id="showMyCourses"><span class="glyphicon glyphicon-user"></span> My Courses</a></li>
-                    <li>
-                       <a href="javascript:document.getElementById('logout').submit()">Logout</a>
-                    </li>
-                    <c:url value="/logout" var="logoutUrl" />
-                    <form id="logout" action="${logoutUrl}" method="post" >
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                    </form>
-                </c:if>
+                </c:when>
+                    <c:otherwise>
+                        <li><a href="#myCoursesTable" id="showMyCourses"><span class="glyphicon glyphicon-user"></span> My Courses</a></li>
+                        <li>
+                            <a href="javascript:document.getElementById('logout').submit()">Logout</a>
+                        </li>
+                        <c:url value="/logout" var="logoutUrl" />
+                        <form id="logout" action="${logoutUrl}" method="post" >
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        </form>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
     </div>
@@ -99,7 +102,7 @@
                         <td>${course.startDate}</td>
                         <td>${course.endDate}</td>
                         <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
-                        <td><a href="/deleteMyCourse/${course.id}">Delete</a></td>
+                        <td><a href="${pageContext.request.contextPath}/deleteMyCourse/${course.id}">Delete</a></td>
                         <td>
                             <c:forEach items="${marks}" var="mark">
                                 <c:if test="${mark.courseId == course.id}">${mark.note} - ${mark.date};</c:if>
@@ -117,7 +120,6 @@
                 <h1>Courses(for teacher)</h1>
             <table class="table table-hover">
                 <c:forEach var="course" items="${coursesForTeacher}">
-
                         <tr>
                             <th>${course.name} (${course.startDate} - ${course.endDate})</th>
                             <th>Set mark</th>
@@ -145,12 +147,7 @@
                                 </c:forEach>
                             </td>
                             <td>
-                                <!--POST delete-->
-                                <form method="post" action="deleteStudentFromCourse">
-                                    <input type="hidden" value="${student.id}" name="studentId">
-                                    <input type="hidden" value="${course.id}" name="courseId">
-                                    <input type="submit" value="Delete from course">
-                                </form>
+                                <a href="${pageContext.request.contextPath}/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a>
                             </td>
                         </tr>
                     </c:forEach>
@@ -172,34 +169,39 @@
             </tr>
         <c:forEach items="${courses}" var="course">
             <tr id ="courseTable">
-                <td><a href="/addCourse/${course.id}">ADD</a></td>
-                <td>${course.name}
-                    <c:if test="${course.startDate<currentDate}">
-                        (Already started)
-                    </c:if>
-                </td>
+
+                <c:choose>
+                    <c:when test="${course.startDate>currentDate}">
+                        <td>  <a href="${pageContext.request.contextPath}/addCourse/${course.id}">Add</a></td>
+                        <td>${course.name}</td>
+                    </c:when>
+                    <c:otherwise>
+                        <td>-</td>
+                        <td>${course.name} (Already started) </td>
+                    </c:otherwise>
+                </c:choose>
                 <td>${course.startDate}</td>
                 <td>${course.endDate}</td>
                 <td>${course.teacher.firstName} ${course.teacher.lastName}</td>
                 <sec:authorize access="hasAuthority('admin')">
-                    <td><a href="/deleteCourse/${course.id}">Delete</a></td>
+                    <td><a href="${pageContext.request.contextPath}/deleteCourse/${course.id}">Delete</a></td>
                 </sec:authorize>
             </tr>
         </c:forEach>
         </table>
             <sec:authorize access="hasAuthority('admin')">
-                <form action="${pageContext.request.contextPath}/addNewCourse" method="POST">
+                <form action="${pageContext.request.contextPath}/addNewCourse" method="POST" onsubmit="return validateCourse();">
                     <label>Title</label>
                     <label>
-                        <input type="text" name="title" maxlength="30" required="required">
+                        <input type="text" id="courseTitle" name="title" maxlength="30" required="required">
                     </label>
                     <label>Start</label>
                     <label>
-                        <input type="date" name="startDate" required="required">
+                        <input type="date" id="startDate" name="startDate" required="required">
                     </label>
                     <label>End</label>
                     <label>
-                        <input type="date" name="endDate" required="required">
+                        <input type="date" id="endDate" name="endDate" required="required">
                     </label>
                     <div class="dropdown">
                         <button class="dropbtn">Teacher</button>
@@ -241,7 +243,7 @@
                 <c:forEach items="${courses}" var="course">
                     <c:if test="${course.startDate>currentDate}">
                         <tr id ="courseTable">
-                            <td><a href="/addCourse/${course.id}">Add</a></td>
+                            <td><a href="${pageContext.request.contextPath}/addCourse/${course.id}">Add</a></td>
                             <td>${course.name}</td>
                             <td>${course.startDate}</td>
                             <td>${course.endDate}</td>
@@ -259,6 +261,7 @@
         <c:forEach var="course" items="${courses}">
             <tr>
                 <th>${course.name} (${course.startDate} - ${course.endDate})</th>
+                <th>Register date</th>
                 <th>Delete student</th>
                 <th>Delete from course</th>
                 <th>Marks</th>
@@ -266,8 +269,11 @@
             <c:forEach var="student" items="${course.users}">
                 <tr>
                     <td>${student.firstName} ${student.lastName}</td>
-                    <td><a href="/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a></td>
-                    <td><a href="/users/deleteStudent/${student.id}">Delete</a></td>
+                    <td>${student.registerDate}</td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a>
+                    </td>
+                    <td><a href="${pageContext.request.contextPath}/users/deleteStudent/${student.id}">Delete</a></td>
                     <td>
                         <c:forEach var="mark" items="${allMarks}">
                                 <c:if test="${student.id==mark.studentId and course.id==mark.courseId}">

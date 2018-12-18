@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
+
 @Controller
 public class CourseController {
 
@@ -32,7 +33,6 @@ public class CourseController {
         this.userService = userService;
     }
 
-
     @PreAuthorize("hasAuthority('admin')")
     @RequestMapping(value="/addNewCourse", method = RequestMethod.POST)
     public String addNewCourse(@RequestParam(value = "title")@NotNull  String title,
@@ -44,7 +44,7 @@ public class CourseController {
         if(id!=null){course.setId(id);}
         courseService.saveOrUpdate(course);
         LOG.debug("new course is added: \n ".concat(course.toString()));
-        return "forward:/";
+        return "redirect:/";
     }
 
     @PreAuthorize("hasAuthority('admin')")
@@ -52,21 +52,10 @@ public class CourseController {
     public String deleteCourse(@PathVariable int id) {
         courseService.remove(id);
         LOG.debug(String.format("course num %d is removed successfully", id));
-        return "forward:/";
+        return "redirect:/";
     }
 
-    @PreAuthorize("hasAuthority('student')")
-    @RequestMapping(value="deleteMyCourse/{id}")
-    public String deleteCourseForStudent(@PathVariable int id,
-                                         Authentication auth){
-        User user = userService.getUserByEmail(auth.getName());
-        userService.removeCourseForUser(user.getId(),id);
-        LOG.debug(String.format("course num %d is removed for user %d (%s)",id, user.getId(),user.getEmail()));
-        return "forward:/";
-    }
-
-    @PreAuthorize("hasAuthority('student')")
-    @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/addCourse/{id}", method = RequestMethod.GET)
     public  String addCourseForStudent(@PathVariable Integer id,
                                        Authentication auth,
                                        Model model){
@@ -75,9 +64,11 @@ public class CourseController {
                 .stream()
                 .anyMatch((c)->c.equals(courseService.getById(id)))){
             model.addAttribute("error","You already have this course!");
-                return "forward:/";
+            LOG.error(String.format("user num %d already has course num %d",user.getId(),id ));
+            return "redirect:/";
         }else{
+
             userService.addCourse(user.getId(), id);
-            return "forward:/";
-    }}
+            return "redirect:/";
+        }}
 }

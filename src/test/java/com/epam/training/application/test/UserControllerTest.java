@@ -13,19 +13,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class UserControllerTest extends BasicTest{
 
-
    private final static Logger LOG = Logger.getLogger(UserControllerTest.class);
-
-
     @Test
     public void testRemoveStudent(){
         when(userServiceMock.remove(1))
                 .thenReturn(1);
         try {
             mockMvc.perform(get("/users/deleteStudent/{id}",1))
-                    .andExpect(status().isOk())
-                    .andExpect(view().name("forward:/"))
-                    .andExpect(forwardedUrl("/"));
+                    .andExpect(status().is3xxRedirection())
+                    .andExpect(view().name("redirect:/"))
+                    .andExpect(redirectedUrl("/"));
             verify(userServiceMock,times(1)).remove(1);
 
         } catch (Exception e) {
@@ -34,16 +31,14 @@ public class UserControllerTest extends BasicTest{
     }
 
     @Test
-    public void testRemoveStudentFromCourse(){
+    public void testDeleteCourseForStudent(){
         when(userServiceMock.removeCourseForUser(1,1))
                 .thenReturn(1);
         try {
-            mockMvc.perform(post("/deleteStudentFromCourse")
-                    .param("studentId","1")
-                    .param("courseId","1"))
+            mockMvc.perform(get("/deleteStudentFromCourse/{courseId}+{studentId}",1,1))
                     .andDo(print())
-                    .andExpect(status().isOk())
-                    .andExpect(view().name("forward:/"));
+                    .andExpect(status().is3xxRedirection())
+                    .andExpect(view().name("redirect:/"));
             verify(userServiceMock,times(1)).removeCourseForUser(1,1);
 
         } catch (Exception e) {
@@ -61,8 +56,8 @@ public class UserControllerTest extends BasicTest{
                         .param("courseId","1")
                         .param("studentId","1"))
                     .andDo(print())
-                    .andExpect(status().isOk())
-                    .andExpect(view().name("forward:/"));
+                    .andExpect(status().is3xxRedirection())
+                    .andExpect(view().name("redirect:/"));
             verify(archiveServiceMock,times(1))
                     .setMarkForStudent(1,1,10);
          } catch (Exception e) {

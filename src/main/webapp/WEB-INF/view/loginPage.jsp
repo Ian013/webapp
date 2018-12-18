@@ -8,7 +8,7 @@
     <link href="${pageContext.request.contextPath}/css/style.css"/>
     <title>Title</title>
 </head>
-<body onload='document.loginForm.username.focus();'>
+<body>
 <h3>Login</h3>
 
 <c:if test="${not empty error}"><div>${error}</div></c:if>

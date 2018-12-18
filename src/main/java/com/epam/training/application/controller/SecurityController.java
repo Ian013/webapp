@@ -31,7 +31,7 @@ public class SecurityController {
                             @RequestParam(value = "logout",	required = false) String logout,
                             Model model) {
         if (error != null) {
-            model.addAttribute("error", "Invalid Credentials provided.");
+            model.addAttribute("error", "Invalid email or password.");
         }
         if (logout != null) {
             model.addAttribute("message", "Logged out successfully.");
