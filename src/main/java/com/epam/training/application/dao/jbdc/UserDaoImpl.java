@@ -105,6 +105,7 @@ public class UserDaoImpl implements UserDao {
     public Integer remove(int id) {
         jdbcTemplate.update("DELETE FROM user_has_course WHERE user_id=?", id);
         jdbcTemplate.update("DELETE FROM user_has_role WHERE user_id=?",id);
+        jdbcTemplate.update("DELETE FROM archive WHERE student_id=?",id);
         return jdbcTemplate.update("DELETE FROM user WHERE id = ?",id);
 
     }

@@ -8,7 +8,6 @@ public class Archive {
     private int note;
     private int studentId;
     private int courseId;
-
     private Date date;
 
     public Archive(int id,int note,int studentId,int courseId,Date date){

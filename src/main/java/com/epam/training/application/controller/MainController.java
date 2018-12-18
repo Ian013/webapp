@@ -38,14 +38,13 @@ public class MainController {
 
     @RequestMapping(value = "/403",method = RequestMethod.GET)
     public String errorMapping()    {
-        return "error";
+        return "errorPage";
     }
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/",method = RequestMethod.GET)
     public String index(Model model, Authentication auth){
         model.addAttribute("courses",courseService.getAll());
         model.addAttribute("currentDate",new Date(System.currentTimeMillis()));
-
             if (auth!=null) {
                 User user = userService.getUserByEmail(auth.getName());
                 int id = user.getId();
@@ -72,7 +71,7 @@ public class MainController {
                     model.addAttribute("coursesForStudent",
                             studentCourses);
                     model.addAttribute("marks",archiveService.getArchiveNotesForStudent(user.getId()));
-                    LOG.debug(archiveService.getArchiveNotesForStudent(user.getId()));
+
                 }
                 //Same for admin
                 if(auth.getAuthorities()

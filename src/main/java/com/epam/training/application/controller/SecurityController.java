@@ -37,14 +37,13 @@ public class SecurityController {
             model.addAttribute("message", "Logged out successfully.");
         }
 
-        return "/loginPage";
+        return "loginPage";
     }
 
     @RequestMapping(value = "/registerPage", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-
-        return "/registerPage";
+        return "registerPage";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -53,16 +52,11 @@ public class SecurityController {
         if(result.hasErrors()) {
                 return "registerPage";
         }
-        if(userForm.getEmail()!=null&&!userForm.getEmail().equals("")){
-            if(userService.getAll()
+        if(userService.getAll()
                     .stream()
                     .anyMatch((user)->user.getEmail().equals(userForm.getEmail()))){
                 model.addAttribute("error","Email already exists!");
                 return "registerPage";
-            }
-        }else{
-            model.addAttribute("error","Invalid Attribute");
-            return "registerPage";
         }
         userService.saveOrUpdate(userForm);
         roleService.setRoleForUser(userService.getUserByEmail(userForm.getEmail()).getId()

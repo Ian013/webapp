@@ -102,7 +102,7 @@
                         <td><a href="/deleteMyCourse/${course.id}">Delete</a></td>
                         <td>
                             <c:forEach items="${marks}" var="mark">
-                                <c:if test="${mark.courseId == course.id}">${mark.note}</c:if>
+                                <c:if test="${mark.courseId == course.id}">${mark.note} - ${mark.date};</c:if>
                             </c:forEach>
                         </td>
                     </tr>
@@ -117,30 +117,43 @@
                 <h1>Courses(for teacher)</h1>
             <table class="table table-hover">
                 <c:forEach var="course" items="${coursesForTeacher}">
-                    <table class="table table-hover">
+
                         <tr>
-                            <th>${course.name}</th>
-                            <th>${course.startDate} - ${course.endDate}</th>
+                            <th>${course.name} (${course.startDate} - ${course.endDate})</th>
+                            <th>Set mark</th>
+                            <th>Marks</th>
+                            <th>Delete from course</th>
                         </tr>
                     <c:forEach var="student" items="${course.users}">
                         <tr>
                             <td>${student.firstName} ${student.lastName}</td>
                             <td>
-                                <a href="/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a>
-                            </td>
-                            <td>
                                 <form method="post" action="markStudent">
                                     <label>Mark
                                     <input type="number" name="mark" required="required" min="0" max="10">
                                 </label>
-                                    <input type ="hidden" name="courseId" value="${course.id}">
+                                    <input type="hidden" name="courseId" value="${course.id}">
                                     <input type="hidden" name="studentId" value="${student.id}">
                                 <input type="submit" value="submit">
                                 </form>
                             </td>
+                            <td>
+                                <c:forEach var="mark" items="${allMarks}">
+                                    <c:if test="${student.id==mark.studentId and course.id==mark.courseId}">
+                                        ${mark.note} - ${mark.date};
+                                    </c:if>
+                                </c:forEach>
+                            </td>
+                            <td>
+                                <!--POST delete-->
+                                <form method="post" action="deleteStudentFromCourse">
+                                    <input type="hidden" value="${student.id}" name="studentId">
+                                    <input type="hidden" value="${course.id}" name="courseId">
+                                    <input type="submit" value="Delete from course">
+                                </form>
+                            </td>
                         </tr>
                     </c:forEach>
-                </table>
                 </c:forEach>
             </table>
         </div>
@@ -228,7 +241,7 @@
                 <c:forEach items="${courses}" var="course">
                     <c:if test="${course.startDate>currentDate}">
                         <tr id ="courseTable">
-                            <td><a href="/addCourse/${course.id}">ADD</a></td>
+                            <td><a href="/addCourse/${course.id}">Add</a></td>
                             <td>${course.name}</td>
                             <td>${course.startDate}</td>
                             <td>${course.endDate}</td>
@@ -241,30 +254,31 @@
     </div>
 <sec:authorize access="hasAuthority('admin')">
     <div class="container" id="allStudentsTable">
-        <table>
-        <c:forEach var="course" items="${courses}">
+        <h1>Students</h1>
         <table class="table table-hover">
+        <c:forEach var="course" items="${courses}">
             <tr>
-                <th>${course.name}</th>
-                <th>${course.startDate} - ${course.endDate}</th>
+                <th>${course.name} (${course.startDate} - ${course.endDate})</th>
+                <th>Delete student</th>
+                <th>Delete from course</th>
+                <th>Marks</th>
             </tr>
             <c:forEach var="student" items="${course.users}">
                 <tr>
                     <td>${student.firstName} ${student.lastName}</td>
                     <td><a href="/deleteStudentFromCourse/${student.id}+${course.id}">Delete from course</a></td>
-                    <td><a href="users/deleteStudent/${student.id}">Delete</a></td>
+                    <td><a href="/users/deleteStudent/${student.id}">Delete</a></td>
                     <td>
                         <c:forEach var="mark" items="${allMarks}">
                                 <c:if test="${student.id==mark.studentId and course.id==mark.courseId}">
-                                    ${mark.note}
+                                    ${mark.note} - ${mark.date};
                                 </c:if>
                         </c:forEach>
                     </td>
                 </tr>
             </c:forEach>
-        </table>
         </c:forEach>
-</table>
+        </table>
     </div>
 </sec:authorize>
 <br>

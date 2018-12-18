@@ -6,6 +6,7 @@ import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,8 @@ public class CourseController {
         this.userService = userService;
     }
 
+
+    @PreAuthorize("hasAuthority('admin')")
     @RequestMapping(value="/addNewCourse", method = RequestMethod.POST)
     public String addNewCourse(@RequestParam(value = "title")@NotNull  String title,
                                @RequestParam(value = "startDate")@NotNull Date start,
@@ -41,25 +44,28 @@ public class CourseController {
         if(id!=null){course.setId(id);}
         courseService.saveOrUpdate(course);
         LOG.debug("new course is added: \n ".concat(course.toString()));
-        return "redirect:/";
+        return "forward:/";
     }
 
-    @RequestMapping(value="deleteCourse/{id}", method=RequestMethod.GET)
+    @PreAuthorize("hasAuthority('admin')")
+    @RequestMapping(value="/deleteCourse/{id}", method=RequestMethod.GET)
     public String deleteCourse(@PathVariable int id) {
         courseService.remove(id);
         LOG.debug(String.format("course num %d is removed successfully", id));
-        return "redirect:/";
+        return "forward:/";
     }
 
+    @PreAuthorize("hasAuthority('student')")
     @RequestMapping(value="deleteMyCourse/{id}")
     public String deleteCourseForStudent(@PathVariable int id,
                                          Authentication auth){
         User user = userService.getUserByEmail(auth.getName());
         userService.removeCourseForUser(user.getId(),id);
         LOG.debug(String.format("course num %d is removed for user %d (%s)",id, user.getId(),user.getEmail()));
-        return "redirect:/";
+        return "forward:/";
     }
 
+    @PreAuthorize("hasAuthority('student')")
     @RequestMapping(value = "addCourse/{id}", method = RequestMethod.GET)
     public  String addCourseForStudent(@PathVariable Integer id,
                                        Authentication auth,
@@ -69,10 +75,9 @@ public class CourseController {
                 .stream()
                 .anyMatch((c)->c.equals(courseService.getById(id)))){
             model.addAttribute("error","You already have this course!");
-                return "redirect:/";
+                return "forward:/";
         }else{
             userService.addCourse(user.getId(), id);
-            return "redirect:/";
-        }
-    }
+            return "forward:/";
+    }}
 }

@@ -6,7 +6,6 @@ import com.epam.training.application.service.ArchiveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ArchiveServiceImpl implements ArchiveService {
@@ -53,11 +52,4 @@ public class ArchiveServiceImpl implements ArchiveService {
         return archiveDao.getArchiveNotesForStudent(studentId);
     }
 
-    @Override
-    public List<Integer> getMarksForStudent(int courseId, int studentId) {
-        List<Integer> marks =  new ArrayList<>();
-        archiveDao.getMarksForStudent(courseId,studentId)
-        .forEach((a)->marks.add(a.getNote()));
-        return marks;
-    }
 }
