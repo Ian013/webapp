@@ -6,21 +6,19 @@ import com.epam.training.application.service.CourseService;
 import com.epam.training.application.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
 @Controller
 public class CourseController {
-
 
     private final static Logger LOG = Logger.getLogger(StudentController.class);
 
@@ -33,7 +31,7 @@ public class CourseController {
         this.userService = userService;
     }
 
-    @PreAuthorize("hasAuthority('admin')")
+
     @RequestMapping(value="/addNewCourse", method = RequestMethod.POST)
     public String addNewCourse(@RequestParam(value = "title")@NotNull  String title,
                                @RequestParam(value = "startDate")@NotNull Date start,
@@ -47,7 +45,7 @@ public class CourseController {
         return "redirect:/";
     }
 
-    @PreAuthorize("hasAuthority('admin')")
+
     @RequestMapping(value="/deleteCourse/{id}", method=RequestMethod.GET)
     public String deleteCourse(@PathVariable int id) {
         courseService.remove(id);
@@ -58,17 +56,18 @@ public class CourseController {
     @RequestMapping(value = "/addCourse/{id}", method = RequestMethod.GET)
     public  String addCourseForStudent(@PathVariable Integer id,
                                        Authentication auth,
-                                       Model model){
+                                       RedirectAttributes ra){
+
         User user = userService.getUserByEmail(auth.getName());
         if(courseService.getCoursesForStudent(user.getId())
                 .stream()
-                .anyMatch((c)->c.equals(courseService.getById(id)))){
-            model.addAttribute("error","You already have this course!");
+                .anyMatch((c)->c.toString().equals(courseService.getById(id).toString()))){
+            ra.addFlashAttribute("flashError","You already have this course!");
             LOG.error(String.format("user num %d already has course num %d",user.getId(),id ));
             return "redirect:/";
         }else{
-
             userService.addCourse(user.getId(), id);
+            LOG.debug(String.format("course num %d is added to user %d", id,user.getId()));
             return "redirect:/";
         }}
 }

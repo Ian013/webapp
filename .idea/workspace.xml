@@ -7,33 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56def025-383c-4d9d-abbf-c9fe4ec4cffd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webapp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/courseValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/registerValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/43756244-5677-4516-b4c0-819a7bae506b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/43756244-5677-4516-b4c0-819a7bae506b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/ExceptionHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dataSource.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dataSource.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mysqlScripts/createDatabaseIfNotExist.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysql/createDatabaseIfNotExist.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/Runner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/configuration/ContextConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/configuration/ContextConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epam/training/application/service/impl/ArchiveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epam/training/application/service/impl/ArchiveServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
@@ -90,18 +77,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="134" />
-          <entry key="Properties" value="20" />
-          <entry key="XML" value="5" />
+          <entry key="JAVA" value="1233" />
+          <entry key="JSP" value="42" />
+          <entry key="Properties" value="69" />
+          <entry key="XML" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="1" />
-          <entry key="JAVA" value="27" />
-          <entry key="JSP" value="2" />
+          <entry key="JAVA" value="39" />
+          <entry key="JSP" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="3" />
+          <entry key="Properties" value="6" />
+          <entry key="SQL" value="1" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -109,32 +99,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testIndexPageParams#0;class#IndexTest#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+            <state relative-caret-position="23">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,45 +111,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
             <state>
-              <filtering enabled="true" />
+              <caret selection-end-line="15" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="140" column="33" lean-forward="true" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
-              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+            <state relative-caret-position="159">
+              <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/SecurityControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="69" column="47" lean-forward="true" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testLoginPageViewName#0;class#SecurityControllerTest#0" />
-                <element signature="method#testRegisterPageModelAttribute#0;class#SecurityControllerTest#0" />
-                <element signature="method#testRegisterEmailAlreadyExist#0;class#SecurityControllerTest#0" />
               </folding>
             </state>
           </provider>
@@ -190,35 +134,71 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="-589">
+              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/CourseServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/CourseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="63" column="75" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
+            <state relative-caret-position="17">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
               <folding>
-                <element signature="e#1390#1391#0" expanded="true" />
-                <element signature="e#1425#1426#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            <state relative-caret-position="52">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#addNewCourse#0;class#CourseController#0" />
-                <element signature="method#deleteCourse#0;class#CourseController#0" />
-                <element signature="method#addCourseForStudent#0;class#CourseController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-355">
+              <caret line="82" column="80" selection-start-line="82" selection-start-column="80" selection-end-line="82" selection-end-column="80" />
+              <folding>
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,8 +214,8 @@
         <option value="Interface" />
         <option value="CSS File" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -251,11 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/users.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/courses.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/loginValidation.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/registerPage.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/allStudents.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/ajax.js" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/RootConfig.java" />
@@ -267,10 +242,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/ArchiveDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/ArchiveDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/mapper/ArchiveRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/javascript/showCourses.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/databaseScript.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/UserDaoImpl.java" />
@@ -290,18 +263,25 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/loginPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/Runner.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/dataSource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/ContextConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/configuration/WebAppInitialiser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/ExceptionHadlerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/ExceptionHandlerTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/CourseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/CourseServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -675,31 +655,26 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
@@ -739,6 +714,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -806,7 +788,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.12">
+  <component name="RunManager" selected="Spring Boot.Runner">
     <configuration name="CourseControllerTest and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
@@ -842,6 +824,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CourseControllerTest.testAddCourseToStudentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.training.application.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.CourseControllerTest" />
+      <option name="METHOD_NAME" value="testAddCourseToStudentException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CourseControllerTest.testAddNewCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
@@ -858,7 +856,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.testDeleteCourseForStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionHandlerTest.testSQLIntegrityConstraintViolationException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
         <pattern>
@@ -867,24 +865,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.UserControllerTest" />
-      <option name="METHOD_NAME" value="testDeleteCourseForStudent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserControllerTest.testRemoveStudentFromCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="webapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.training.application.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.training.application.test" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.UserControllerTest" />
-      <option name="METHOD_NAME" value="testRemoveStudentFromCourse" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.training.application.test.ExceptionHandlerTest" />
+      <option name="METHOD_NAME" value="testSQLIntegrityConstraintViolationException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1072,18 +1054,18 @@
       <item itemvalue="Spring Boot.Runner" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.12" />
       <item itemvalue="JUnit.CourseControllerTest and 3 more" />
-      <item itemvalue="JUnit.UserControllerTest.testRemoveStudentFromCourse" />
-      <item itemvalue="JUnit.UserControllerTest.testDeleteCourseForStudent" />
       <item itemvalue="JUnit.CourseControllerTest" />
       <item itemvalue="JUnit.CourseControllerTest.testAddNewCourse" />
+      <item itemvalue="JUnit.ExceptionHandlerTest.testSQLIntegrityConstraintViolationException" />
+      <item itemvalue="JUnit.CourseControllerTest.testAddCourseToStudentException" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CourseControllerTest and 3 more" />
+        <item itemvalue="JUnit.CourseControllerTest.testAddCourseToStudentException" />
         <item itemvalue="JUnit.CourseControllerTest" />
+        <item itemvalue="JUnit.ExceptionHandlerTest.testSQLIntegrityConstraintViolationException" />
+        <item itemvalue="JUnit.CourseControllerTest and 3 more" />
         <item itemvalue="JUnit.CourseControllerTest.testAddNewCourse" />
-        <item itemvalue="JUnit.UserControllerTest.testDeleteCourseForStudent" />
-        <item itemvalue="JUnit.UserControllerTest.testRemoveStudentFromCourse" />
       </list>
     </recent_temporary>
   </component>
@@ -1165,7 +1147,7 @@
       <workItem from="1545160618596" duration="892000" />
       <workItem from="1545161699718" duration="552000" />
       <workItem from="1545164478277" duration="2000" />
-      <workItem from="1545166010392" duration="8257000" />
+      <workItem from="1545166010392" duration="14553000" />
     </task>
     <task id="LOCAL-00001" summary="Dao">
       <created>1542360767980</created>
@@ -1307,28 +1289,17 @@
       <option name="project" value="LOCAL" />
       <updated>1545148991420</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="minor fixes">
+      <created>1545175308929</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1545175308930</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 19h 17m 10s.xml">
-      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseControllerTest_and_3_more - 2018.12.18 at 21h 38m 26s.xml">
-      <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserControllerTest_testRemoveStudentFromCourse - 2018.12.19 at 00h 31m 30s.xml">
-      <configuration name="UserControllerTest.testRemoveStudentFromCourse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserControllerTest_testDeleteCourseForStudent - 2018.12.19 at 00h 37m 44s.xml">
-      <configuration name="UserControllerTest.testDeleteCourseForStudent" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserControllerTest_testDeleteCourseForStudent - 2018.12.19 at 00h 39m 13s.xml">
-      <configuration name="UserControllerTest.testDeleteCourseForStudent" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseControllerTest - 2018.12.19 at 01h 12m 59s.xml">
-      <configuration name="CourseControllerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CourseControllerTest - 2018.12.19 at 01h 14m 53s.xml">
       <configuration name="CourseControllerTest" configurationId="JUnit" />
     </history-entry>
@@ -1341,9 +1312,27 @@
     <history-entry file="CourseControllerTest_and_3_more - 2018.12.19 at 01h 18m 54s.xml">
       <configuration name="CourseControllerTest and 3 more" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExceptionHandlerTest_testSQLIntegrityConstraintViolationException - 2018.12.19 at 11h 31m 21s.xml">
+      <configuration name="ExceptionHandlerTest.testSQLIntegrityConstraintViolationException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionHandlerTest_testSQLIntegrityConstraintViolationException - 2018.12.19 at 11h 33m 50s.xml">
+      <configuration name="ExceptionHandlerTest.testSQLIntegrityConstraintViolationException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionHandlerTest_testSQLIntegrityConstraintViolationException - 2018.12.19 at 11h 39m 20s.xml">
+      <configuration name="ExceptionHandlerTest.testSQLIntegrityConstraintViolationException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseControllerTest - 2018.12.19 at 11h 59m 29s.xml">
+      <configuration name="CourseControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseControllerTest - 2018.12.19 at 12h 02m 50s.xml">
+      <configuration name="CourseControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseControllerTest_testAddCourseToStudentException - 2018.12.19 at 12h 03m 53s.xml">
+      <configuration name="CourseControllerTest.testAddCourseToStudentException" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="536980000" />
+    <option name="totallyTimeSpent" value="543276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1357,7 +1346,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.21709532" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.19364598" />
       <window_info id="Structure" order="1" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1367,23 +1356,23 @@
       <window_info id="Web" order="7" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.39836067" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.38196722" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50226927" side_tool="true" weight="0.39836067" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32786885" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.2749591" />
       <window_info anchor="bottom" id="Spring" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
       <window_info anchor="bottom" id="Dependency Viewer" order="17" weight="0.3289689" />
-      <window_info active="true" anchor="right" id="Maven Projects" visible="true" weight="0.1505295" />
+      <window_info anchor="right" id="Maven Projects" visible="true" weight="0.1505295" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1398,7 +1387,7 @@
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.20801815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969325" visible="true" weight="0.17473525" />
       <window_info id="Structure" order="1" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1408,34 +1397,35 @@
       <window_info id="Web" order="7" sideWeight="0.5030675" side_tool="true" weight="0.17246597" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.24386252" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.22459017" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015129" side_tool="true" weight="0.30605564" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50226927" side_tool="true" weight="0.39836067" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3289689" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32786885" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.2749591" />
       <window_info anchor="bottom" id="Spring" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
       <window_info anchor="bottom" id="Dependency Viewer" order="17" weight="0.3289689" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.15204236" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.18683812" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="JSF" order="9" weight="0.16111952" />
-      <window_info anchor="right" id="CDI" order="10" />
-      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32980332" />
+      <window_info anchor="right" id="Maven Projects" order="0" weight="0.1505295" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.15204236" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.18683812" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="JSF" order="10" weight="0.16111952" />
+      <window_info anchor="right" id="CDI" order="11" />
+      <window_info anchor="right" id="Bean Validation" order="12" weight="0.32980332" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1506,53 +1496,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/modalLogin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/dropdownStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/dao/jbdc/mapper/ArchiveRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" selection-start-column="38" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/errorPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/43756244-5677-4516-b4c0-819a7bae506b/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="98" lean-forward="true" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mysql/createDatabaseIfNotExist.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1213">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/domain/Archive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.2.RELEASE/spring-web-5.1.2.RELEASE-sources.jar!/org/springframework/web/context/WebApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1566,25 +1509,6 @@
           <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/ArchiveServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1694,13 +1618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registerPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1726,17 +1643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="42" lean-forward="true" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1766,40 +1672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addNewCourse#0;class#CourseController#0" />
-            <element signature="method#deleteCourse#0;class#CourseController#0" />
-            <element signature="method#addCourseForStudent#0;class#CourseController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/SecurityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1816,63 +1692,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="55">
+          <caret line="154" column="20" selection-start-line="154" selection-start-column="20" selection-end-line="154" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/ExceptionHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#testIndexPageParams#0;class#IndexTest#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://43756244-5677-4516-b4c0-819a7bae506b/schema/faculty/table/archive">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="140" column="33" lean-forward="true" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+        <state relative-caret-position="-355">
+          <caret line="82" column="80" selection-start-line="82" selection-start-column="80" selection-end-line="82" selection-end-column="80" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/BasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="15" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mysql/createDatabaseIfNotExist.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/CourseControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="97" column="51" lean-forward="true" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="59" column="58" lean-forward="true" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/ExceptionHandlerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/training/application/test/IndexTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="63" column="75" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
+        <state relative-caret-position="17">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/ArchiveServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/CourseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/training/application/service/impl/CourseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>

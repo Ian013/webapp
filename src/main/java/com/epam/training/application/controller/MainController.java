@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -33,18 +34,24 @@ public class MainController {
     }
     @RequestMapping(value = "/*",method = RequestMethod.GET)
     public String handle() {
+        LOG.error("404");
         return "redirect:/";
     }
 
     @RequestMapping(value = "/403",method = RequestMethod.GET)
     public String errorMapping()    {
+        LOG.error("Forbidden");
         return "errorPage";
     }
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
-    public String index(Model model, Authentication auth){
+    public String index(Model model, Authentication auth,
+                        @ModelAttribute(value = "flashError")String errorMessage){
         model.addAttribute("courses",courseService.getAll());
         model.addAttribute("currentDate",new Date(System.currentTimeMillis()));
+        if (errorMessage!=null){
+            model.addAttribute("flashError",errorMessage);
+        }
             if (auth!=null) {
                 User user = userService.getUserByEmail(auth.getName());
                 model.addAttribute("currentUser",user);
@@ -58,11 +65,9 @@ public class MainController {
 
                     coursesForTeacher.forEach((c)->
                             c.setUsers(userService.getStudentsFromCourse(c.getId())));
-
-                    model.addAttribute("coursesForTeacher",
-                            coursesForTeacher);
+                    model.addAttribute("coursesForTeacher",coursesForTeacher);
                     model.addAttribute("allMarks",archiveService.getAll());
-                }
+                 }
                 //Loads data if user is a student
                 if(auth.getAuthorities()
                         .stream()
@@ -72,7 +77,6 @@ public class MainController {
                     model.addAttribute("coursesForStudent",
                             studentCourses);
                     model.addAttribute("marks",archiveService.getArchiveNotesForStudent(user.getId()));
-
                 }
                 //Same for admin
                 if(auth.getAuthorities()

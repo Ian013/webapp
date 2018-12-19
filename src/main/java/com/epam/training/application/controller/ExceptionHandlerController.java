@@ -1,9 +1,9 @@
 package com.epam.training.application.controller;
 
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.sql.SQLDataException;
 import java.sql.SQLIntegrityConstraintViolationException;
@@ -17,14 +17,14 @@ public class ExceptionHandlerController {
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
-    public String emptyResultSetExceptionHandler(Model model){
-        model.addAttribute("error","No such course");
+    public String emptyResultSetExceptionHandler(RedirectAttributes ra){
+        ra.addFlashAttribute("flashError","No such course!");
         return "redirect:/";
     }
 
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public String sqlException(Model model){
-        model.addAttribute("error","You already have this course!");
+    public String sqlException( RedirectAttributes ra){
+        ra.addFlashAttribute("flashError","You already have this course!");
         return "redirect:/";
     }
 }

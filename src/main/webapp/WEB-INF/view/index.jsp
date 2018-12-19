@@ -35,7 +35,7 @@
         <p>${currentUser.firstName} ${currentUser.lastName}</p>
     </div>
 </div>
-<c:if test="${not empty error}"><div class="error"><p>${error}</p></div></c:if>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -80,6 +80,7 @@
     </div>
 </nav>
 <div class="container">
+    <c:if test="${not empty flashError}"><div class="error"><h2 style="color:red">${flashError}</h2></div></c:if>
 <sec:authorize access="hasAuthority('student')">
         <c:if test="${empty coursesForStudent}">
             <p>You haven't chosen any course yet</p>

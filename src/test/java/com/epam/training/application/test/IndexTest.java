@@ -25,6 +25,17 @@ public class IndexTest extends BasicTest {
     }
 
     @Test
+    public void test404(){
+        try{
+            mockMvc.perform(get("/randomPage"))
+                    .andExpect(status().is3xxRedirection())
+                    .andExpect(view().name("redirect:/"));
+        } catch (Exception e) {
+            LOG.error(e.getMessage());
+        }
+    }
+
+    @Test
     public void testIndexPageParams(){
         Course java = new Course();
         java.setId(1);

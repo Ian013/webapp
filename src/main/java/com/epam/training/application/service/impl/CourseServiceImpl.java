@@ -2,7 +2,6 @@ package com.epam.training.application.service.impl;
 
 import com.epam.training.application.dao.CourseDao;
 import com.epam.training.application.domain.Course;
-import com.epam.training.application.domain.User;
 import com.epam.training.application.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,15 +43,6 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<Course> getCoursesForStudent(int studentId) {
         return courseDao.getCoursesByStudentId(studentId);
-    }
-
-    @Override
-    public Integer addStudent(int courseId, User user) {
-        Course course = courseDao.getById(courseId);
-        List<User> users =course.getUsers();
-        users.add(user);
-        course.setUsers(users);
-        return user.getId();
     }
 
     @Override
